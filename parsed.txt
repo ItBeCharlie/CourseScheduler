@@ -1,0 +1,472 @@
+Class Number: 3402
+Course Info: ICSI 201 Intro Comp Sci
+Meeting Info: TTH 01:30_PM-02:50_PM Lecture Center 7 Kuperman,Vladimir
+Course Description: This course first introduces with the elementary concepts of computer science such as CPU, memory, I/O devices and binary number system. It then focuses on developing basic programming skills. The topics include input and output data, data types, control structures, functions/methods, arrays, procedural and object-oriented programming concepts, and program debugging and compilation. Only one of I CSI/I ECE 201 may be taken for credit. Prerequisite(s): no prerequisite; general mathematical knowledge and computer skills are recommended.
+Class Number: 3403
+Course Info: ICSI 201 Intro Comp Sci
+Meeting Info: M 09:30_AM-10:25_AM Humanities 032 Kuperman,Vladimir
+Course Description: This course first introduces with the elementary concepts of computer science such as CPU, memory, I/O devices and binary number system. It then focuses on developing basic programming skills. The topics include input and output data, data types, control structures, functions/methods, arrays, procedural and object-oriented programming concepts, and program debugging and compilation. Only one of I CSI/I ECE 201 may be taken for credit. Prerequisite(s): no prerequisite; general mathematical knowledge and computer skills are recommended.
+Class Number: 3404
+Course Info: ICSI 201 Intro Comp Sci
+Meeting Info: TH 04:30_PM-05:25_PM Physics 123 Kuperman,Vladimir
+Course Description: This course first introduces with the elementary concepts of computer science such as CPU, memory, I/O devices and binary number system. It then focuses on developing basic programming skills. The topics include input and output data, data types, control structures, functions/methods, arrays, procedural and object-oriented programming concepts, and program debugging and compilation. Only one of I CSI/I ECE 201 may be taken for credit. Prerequisite(s): no prerequisite; general mathematical knowledge and computer skills are recommended.
+Class Number: 3405
+Course Info: ICSI 201 Intro Comp Sci
+Meeting Info: W 09:30_AM-10:25_AM Humanities 032 Kuperman,Vladimir
+Course Description: This course first introduces with the elementary concepts of computer science such as CPU, memory, I/O devices and binary number system. It then focuses on developing basic programming skills. The topics include input and output data, data types, control structures, functions/methods, arrays, procedural and object-oriented programming concepts, and program debugging and compilation. Only one of I CSI/I ECE 201 may be taken for credit. Prerequisite(s): no prerequisite; general mathematical knowledge and computer skills are recommended.
+Class Number: 3406
+Course Info: ICSI 201 Intro Comp Sci
+Meeting Info: M 11:40_AM-12:35_PM Massry Schl of Business 125 Kuperman,Vladimir
+Course Description: This course first introduces with the elementary concepts of computer science such as CPU, memory, I/O devices and binary number system. It then focuses on developing basic programming skills. The topics include input and output data, data types, control structures, functions/methods, arrays, procedural and object-oriented programming concepts, and program debugging and compilation. Only one of I CSI/I ECE 201 may be taken for credit. Prerequisite(s): no prerequisite; general mathematical knowledge and computer skills are recommended.
+Class Number: 3407
+Course Info: ICSI 201 Intro Comp Sci
+Meeting Info: F 11:40_AM-12:35_PM Humanities 019 Kuperman,Vladimir
+Course Description: This course first introduces with the elementary concepts of computer science such as CPU, memory, I/O devices and binary number system. It then focuses on developing basic programming skills. The topics include input and output data, data types, control structures, functions/methods, arrays, procedural and object-oriented programming concepts, and program debugging and compilation. Only one of I CSI/I ECE 201 may be taken for credit. Prerequisite(s): no prerequisite; general mathematical knowledge and computer skills are recommended.
+Class Number: 3782
+Course Info: ICSI 201 Intro Comp Sci
+Meeting Info: F 09:30_AM-10:25_AM Massry Schl of Business 221 Kuperman,Vladimir
+Course Description: This course first introduces with the elementary concepts of computer science such as CPU, memory, I/O devices and binary number system. It then focuses on developing basic programming skills. The topics include input and output data, data types, control structures, functions/methods, arrays, procedural and object-oriented programming concepts, and program debugging and compilation. Only one of I CSI/I ECE 201 may be taken for credit. Prerequisite(s): no prerequisite; general mathematical knowledge and computer skills are recommended.
+Class Number: 7343
+Course Info: ICSI 201 Intro Comp Sci
+Meeting Info: M 01:10_PM-02:05_PM Arts and Sciences B15 Kuperman,Vladimir
+Course Description: This course first introduces with the elementary concepts of computer science such as CPU, memory, I/O devices and binary number system. It then focuses on developing basic programming skills. The topics include input and output data, data types, control structures, functions/methods, arrays, procedural and object-oriented programming concepts, and program debugging and compilation. Only one of I CSI/I ECE 201 may be taken for credit. Prerequisite(s): no prerequisite; general mathematical knowledge and computer skills are recommended.
+Class Number: 7344
+Course Info: ICSI 201 Intro Comp Sci
+Meeting Info: F 12:45_PM-01:40_PM Massry Schl of Business 221 Kuperman,Vladimir
+Course Description: This course first introduces with the elementary concepts of computer science such as CPU, memory, I/O devices and binary number system. It then focuses on developing basic programming skills. The topics include input and output data, data types, control structures, functions/methods, arrays, procedural and object-oriented programming concepts, and program debugging and compilation. Only one of I CSI/I ECE 201 may be taken for credit. Prerequisite(s): no prerequisite; general mathematical knowledge and computer skills are recommended.
+Class Number: 7345
+Course Info: ICSI 201 Intro Comp Sci
+Meeting Info: F 10:35_AM-11:30_AM Massry Schl of Business 221 Kuperman,Vladimir
+Course Description: This course first introduces with the elementary concepts of computer science such as CPU, memory, I/O devices and binary number system. It then focuses on developing basic programming skills. The topics include input and output data, data types, control structures, functions/methods, arrays, procedural and object-oriented programming concepts, and program debugging and compilation. Only one of I CSI/I ECE 201 may be taken for credit. Prerequisite(s): no prerequisite; general mathematical knowledge and computer skills are recommended.
+Class Number: 7346
+Course Info: ICSI 201 Intro Comp Sci
+Meeting Info: F 01:50_PM-02:45_PM Massry Schl of Business 221 Kuperman,Vladimir
+Course Description: This course first introduces with the elementary concepts of computer science such as CPU, memory, I/O devices and binary number system. It then focuses on developing basic programming skills. The topics include input and output data, data types, control structures, functions/methods, arrays, procedural and object-oriented programming concepts, and program debugging and compilation. Only one of I CSI/I ECE 201 may be taken for credit. Prerequisite(s): no prerequisite; general mathematical knowledge and computer skills are recommended.
+Class Number: 7347
+Course Info: ICSI 201 Intro Comp Sci
+Meeting Info: F 03:00_PM-03:55_PM Humanities 116 Kuperman,Vladimir
+Course Description: This course first introduces with the elementary concepts of computer science such as CPU, memory, I/O devices and binary number system. It then focuses on developing basic programming skills. The topics include input and output data, data types, control structures, functions/methods, arrays, procedural and object-oriented programming concepts, and program debugging and compilation. Only one of I CSI/I ECE 201 may be taken for credit. Prerequisite(s): no prerequisite; general mathematical knowledge and computer skills are recommended.
+Class Number: 7779
+Course Info: ICSI 201 Intro Comp Sci
+Meeting Info: T 09:00_AM-10:20_AM Arts and Sciences B15 Kuperman,Vladimir
+Course Description: This course first introduces with the elementary concepts of computer science such as CPU, memory, I/O devices and binary number system. It then focuses on developing basic programming skills. The topics include input and output data, data types, control structures, functions/methods, arrays, procedural and object-oriented programming concepts, and program debugging and compilation. Only one of I CSI/I ECE 201 may be taken for credit. Prerequisite(s): no prerequisite; general mathematical knowledge and computer skills are recommended.
+Class Number: 7795
+Course Info: ICSI 201 Intro Comp Sci
+Meeting Info: W 10:35_AM-11:30_AM Massry Schl of Business 221 Kuperman,Vladimir
+Course Description: This course first introduces with the elementary concepts of computer science such as CPU, memory, I/O devices and binary number system. It then focuses on developing basic programming skills. The topics include input and output data, data types, control structures, functions/methods, arrays, procedural and object-oriented programming concepts, and program debugging and compilation. Only one of I CSI/I ECE 201 may be taken for credit. Prerequisite(s): no prerequisite; general mathematical knowledge and computer skills are recommended.
+Class Number: 8722
+Course Info: ICSI 201 Intro Comp Sci
+Meeting Info: MW 03:00_PM-04:20_PM Taconic 122 Hono II,Daniel
+Course Description: This course first introduces with the elementary concepts of computer science such as CPU, memory, I/O devices and binary number system. It then focuses on developing basic programming skills. The topics include input and output data, data types, control structures, functions/methods, arrays, procedural and object-oriented programming concepts, and program debugging and compilation. Only one of I CSI/I ECE 201 may be taken for credit. Prerequisite(s): no prerequisite; general mathematical knowledge and computer skills are recommended.
+Class Number: 8724
+Course Info: ICSI 201 Intro Comp Sci
+Meeting Info: F 09:30_AM-10:25_AM Humanities 108 Hono II,Daniel
+Course Description: This course first introduces with the elementary concepts of computer science such as CPU, memory, I/O devices and binary number system. It then focuses on developing basic programming skills. The topics include input and output data, data types, control structures, functions/methods, arrays, procedural and object-oriented programming concepts, and program debugging and compilation. Only one of I CSI/I ECE 201 may be taken for credit. Prerequisite(s): no prerequisite; general mathematical knowledge and computer skills are recommended.
+Class Number: 8725
+Course Info: ICSI 201 Intro Comp Sci
+Meeting Info: F 10:35_AM-11:30_AM Taconic B031 Hono II,Daniel
+Course Description: This course first introduces with the elementary concepts of computer science such as CPU, memory, I/O devices and binary number system. It then focuses on developing basic programming skills. The topics include input and output data, data types, control structures, functions/methods, arrays, procedural and object-oriented programming concepts, and program debugging and compilation. Only one of I CSI/I ECE 201 may be taken for credit. Prerequisite(s): no prerequisite; general mathematical knowledge and computer skills are recommended.
+Class Number: 8726
+Course Info: ICSI 201 Intro Comp Sci
+Meeting Info: F 11:40_AM-12:35_PM Humanities 108 Hono II,Daniel
+Course Description: This course first introduces with the elementary concepts of computer science such as CPU, memory, I/O devices and binary number system. It then focuses on developing basic programming skills. The topics include input and output data, data types, control structures, functions/methods, arrays, procedural and object-oriented programming concepts, and program debugging and compilation. Only one of I CSI/I ECE 201 may be taken for credit. Prerequisite(s): no prerequisite; general mathematical knowledge and computer skills are recommended.
+Class Number: 8727
+Course Info: ICSI 201 Intro Comp Sci
+Meeting Info: F 12:45_PM-01:40_PM Taconic B031 Hono II,Daniel
+Course Description: This course first introduces with the elementary concepts of computer science such as CPU, memory, I/O devices and binary number system. It then focuses on developing basic programming skills. The topics include input and output data, data types, control structures, functions/methods, arrays, procedural and object-oriented programming concepts, and program debugging and compilation. Only one of I CSI/I ECE 201 may be taken for credit. Prerequisite(s): no prerequisite; general mathematical knowledge and computer skills are recommended.
+Class Number: 9312
+Course Info: ICSI 201 Intro Comp Sci
+Meeting Info: TTH 03:00_PM-04:20_PM Chemistry 151 Arora,Shashank
+Course Description: This course first introduces with the elementary concepts of computer science such as CPU, memory, I/O devices and binary number system. It then focuses on developing basic programming skills. The topics include input and output data, data types, control structures, functions/methods, arrays, procedural and object-oriented programming concepts, and program debugging and compilation. Only one of I CSI/I ECE 201 may be taken for credit. Prerequisite(s): no prerequisite; general mathematical knowledge and computer skills are recommended.
+Class Number: 9314
+Course Info: ICSI 201 Intro Comp Sci
+Meeting Info: M 04:30_PM-05:25_PM Massry Schl of Business 209 Kuperman,Vladimir
+Course Description: This course first introduces with the elementary concepts of computer science such as CPU, memory, I/O devices and binary number system. It then focuses on developing basic programming skills. The topics include input and output data, data types, control structures, functions/methods, arrays, procedural and object-oriented programming concepts, and program debugging and compilation. Only one of I CSI/I ECE 201 may be taken for credit. Prerequisite(s): no prerequisite; general mathematical knowledge and computer skills are recommended.
+Class Number: 9315
+Course Info: ICSI 201 Intro Comp Sci
+Meeting Info: TH 04:30_PM-05:25_PM Massry Schl of Business 137 Kuperman,Vladimir
+Course Description: This course first introduces with the elementary concepts of computer science such as CPU, memory, I/O devices and binary number system. It then focuses on developing basic programming skills. The topics include input and output data, data types, control structures, functions/methods, arrays, procedural and object-oriented programming concepts, and program debugging and compilation. Only one of I CSI/I ECE 201 may be taken for credit. Prerequisite(s): no prerequisite; general mathematical knowledge and computer skills are recommended.
+Class Number: 9316
+Course Info: ICSI 201 Intro Comp Sci
+Meeting Info: T 04:30_PM-05:25_PM Massry Schl of Business 205 Kuperman,Vladimir
+Course Description: This course first introduces with the elementary concepts of computer science such as CPU, memory, I/O devices and binary number system. It then focuses on developing basic programming skills. The topics include input and output data, data types, control structures, functions/methods, arrays, procedural and object-oriented programming concepts, and program debugging and compilation. Only one of I CSI/I ECE 201 may be taken for credit. Prerequisite(s): no prerequisite; general mathematical knowledge and computer skills are recommended.
+Class Number: 9320
+Course Info: ICSI 201 Intro Comp Sci
+Meeting Info: M 01:10_PM-02:05_PM Massry Schl of Business 368 Arora,Shashank
+Course Description: This course first introduces with the elementary concepts of computer science such as CPU, memory, I/O devices and binary number system. It then focuses on developing basic programming skills. The topics include input and output data, data types, control structures, functions/methods, arrays, procedural and object-oriented programming concepts, and program debugging and compilation. Only one of I CSI/I ECE 201 may be taken for credit. Prerequisite(s): no prerequisite; general mathematical knowledge and computer skills are recommended.
+Class Number: 9321
+Course Info: ICSI 201 Intro Comp Sci
+Meeting Info: W 01:10_PM-02:05_PM Massry Schl of Business 368 Arora,Shashank
+Course Description: This course first introduces with the elementary concepts of computer science such as CPU, memory, I/O devices and binary number system. It then focuses on developing basic programming skills. The topics include input and output data, data types, control structures, functions/methods, arrays, procedural and object-oriented programming concepts, and program debugging and compilation. Only one of I CSI/I ECE 201 may be taken for credit. Prerequisite(s): no prerequisite; general mathematical knowledge and computer skills are recommended.
+Class Number: 3408
+Course Info: ICSI 210 Discrete Structures
+Meeting Info: TTH 10:30_AM-11:50_AM Taconic 122 Kuperman,Vladimir
+Course Description: Mathematical reasoning, propositions, predicates and quantifiers; Boolean algebra, logic minimization; sets, functions, sequences, matrix algebra; mathematical induction and recursion; number theory, modular arithmetic, counting, permutations and combinations. Only one of I CSI/I ECE 210 may be taken for credit. Prerequisite(s) or corequisite(s): A MAT 112.
+Class Number: 5804
+Course Info: ICSI 210 Discrete Structures
+Meeting Info: TH 04:30_PM-05:25_PM Massry Schl of Business 141 Kuperman,Vladimir
+Course Description: Mathematical reasoning, propositions, predicates and quantifiers; Boolean algebra, logic minimization; sets, functions, sequences, matrix algebra; mathematical induction and recursion; number theory, modular arithmetic, counting, permutations and combinations. Only one of I CSI/I ECE 210 may be taken for credit. Prerequisite(s) or corequisite(s): A MAT 112.
+Class Number: 5805
+Course Info: ICSI 210 Discrete Structures
+Meeting Info: F 11:40_AM-12:35_PM Massry Schl of Business 221 Kuperman,Vladimir
+Course Description: Mathematical reasoning, propositions, predicates and quantifiers; Boolean algebra, logic minimization; sets, functions, sequences, matrix algebra; mathematical induction and recursion; number theory, modular arithmetic, counting, permutations and combinations. Only one of I CSI/I ECE 210 may be taken for credit. Prerequisite(s) or corequisite(s): A MAT 112.
+Class Number: 5806
+Course Info: ICSI 210 Discrete Structures
+Meeting Info: M 11:40_AM-12:35_PM Humanities 109 Kuperman,Vladimir
+Course Description: Mathematical reasoning, propositions, predicates and quantifiers; Boolean algebra, logic minimization; sets, functions, sequences, matrix algebra; mathematical induction and recursion; number theory, modular arithmetic, counting, permutations and combinations. Only one of I CSI/I ECE 210 may be taken for credit. Prerequisite(s) or corequisite(s): A MAT 112.
+Class Number: 8732
+Course Info: ICSI 210 Discrete Structures
+Meeting Info: MW 10:10_AM-11:30_AM SL 206 Hono II,Daniel
+Course Description: Mathematical reasoning, propositions, predicates and quantifiers; Boolean algebra, logic minimization; sets, functions, sequences, matrix algebra; mathematical induction and recursion; number theory, modular arithmetic, counting, permutations and combinations. Only one of I CSI/I ECE 210 may be taken for credit. Prerequisite(s) or corequisite(s): A MAT 112.
+Class Number: 8734
+Course Info: ICSI 210 Discrete Structures
+Meeting Info: F 10:35_AM-11:30_AM Humanities 123 Hono II,Daniel
+Course Description: Mathematical reasoning, propositions, predicates and quantifiers; Boolean algebra, logic minimization; sets, functions, sequences, matrix algebra; mathematical induction and recursion; number theory, modular arithmetic, counting, permutations and combinations. Only one of I CSI/I ECE 210 may be taken for credit. Prerequisite(s) or corequisite(s): A MAT 112.
+Class Number: 8735
+Course Info: ICSI 210 Discrete Structures
+Meeting Info: F 11:40_AM-12:35_PM Humanities 024 Hono II,Daniel
+Course Description: Mathematical reasoning, propositions, predicates and quantifiers; Boolean algebra, logic minimization; sets, functions, sequences, matrix algebra; mathematical induction and recursion; number theory, modular arithmetic, counting, permutations and combinations. Only one of I CSI/I ECE 210 may be taken for credit. Prerequisite(s) or corequisite(s): A MAT 112.
+Class Number: 5394
+Course Info: ICSI 213 Data Structures
+Meeting Info: M 10:35_AM-11:30_AM Arts and Sciences B15 Arora,Shashank
+Course Description: (Formerly I CSI 310.) This course covers commonly used abstract data structures such as lists, stacks, queues, trees and graphs. The implementation and time-space analysis of these data structures is discussed in the context of recursion, sorting and searching algorithms. May not be taken by students with credit for I CSI 310. Only one of I CSI/I ECE 213 may be taken for credit. Must be completed with a grade of C or better to take I CSI 333 or I ECE 332. Prerequisite(s): grade of C or better in I ECE/I CSI 201, or I ECE 141.
+Class Number: 5395
+Course Info: ICSI 213 Data Structures
+Meeting Info: F 09:30_AM-10:25_AM Catskill 160 Arora,Shashank
+Course Description: (Formerly I CSI 310.) This course covers commonly used abstract data structures such as lists, stacks, queues, trees and graphs. The implementation and time-space analysis of these data structures is discussed in the context of recursion, sorting and searching algorithms. May not be taken by students with credit for I CSI 310. Only one of I CSI/I ECE 213 may be taken for credit. Must be completed with a grade of C or better to take I CSI 333 or I ECE 332. Prerequisite(s): grade of C or better in I ECE/I CSI 201, or I ECE 141.
+Class Number: 5396
+Course Info: ICSI 213 Data Structures
+Meeting Info: TH 03:00_PM-03:55_PM Catskill 147 Arora,Shashank
+Course Description: (Formerly I CSI 310.) This course covers commonly used abstract data structures such as lists, stacks, queues, trees and graphs. The implementation and time-space analysis of these data structures is discussed in the context of recursion, sorting and searching algorithms. May not be taken by students with credit for I CSI 310. Only one of I CSI/I ECE 213 may be taken for credit. Must be completed with a grade of C or better to take I CSI 333 or I ECE 332. Prerequisite(s): grade of C or better in I ECE/I CSI 201, or I ECE 141.
+Class Number: 6371
+Course Info: ICSI 213 Data Structures
+Meeting Info: TTH 09:00_AM-10:20_AM Campus Center Auditorium Arora,Shashank
+Course Description: (Formerly I CSI 310.) This course covers commonly used abstract data structures such as lists, stacks, queues, trees and graphs. The implementation and time-space analysis of these data structures is discussed in the context of recursion, sorting and searching algorithms. May not be taken by students with credit for I CSI 310. Only one of I CSI/I ECE 213 may be taken for credit. Must be completed with a grade of C or better to take I CSI 333 or I ECE 332. Prerequisite(s): grade of C or better in I ECE/I CSI 201, or I ECE 141.
+Class Number: 9324
+Course Info: ICSI 213 Data Structures
+Meeting Info: M 06:00_PM-07:20_PM Massry Schl of Business 209 Arora,Shashank
+Course Description: (Formerly I CSI 310.) This course covers commonly used abstract data structures such as lists, stacks, queues, trees and graphs. The implementation and time-space analysis of these data structures is discussed in the context of recursion, sorting and searching algorithms. May not be taken by students with credit for I CSI 310. Only one of I CSI/I ECE 213 may be taken for credit. Must be completed with a grade of C or better to take I CSI 333 or I ECE 332. Prerequisite(s): grade of C or better in I ECE/I CSI 201, or I ECE 141.
+Class Number: 9325
+Course Info: ICSI 213 Data Structures
+Meeting Info: W 04:30_PM-05:25_PM Massry Schl of Business 133 Arora,Shashank
+Course Description: (Formerly I CSI 310.) This course covers commonly used abstract data structures such as lists, stacks, queues, trees and graphs. The implementation and time-space analysis of these data structures is discussed in the context of recursion, sorting and searching algorithms. May not be taken by students with credit for I CSI 310. Only one of I CSI/I ECE 213 may be taken for credit. Must be completed with a grade of C or better to take I CSI 333 or I ECE 332. Prerequisite(s): grade of C or better in I ECE/I CSI 201, or I ECE 141.
+Class Number: 9326
+Course Info: ICSI 213 Data Structures
+Meeting Info: F 10:35_AM-11:30_AM Catskill 160 Arora,Shashank
+Course Description: (Formerly I CSI 310.) This course covers commonly used abstract data structures such as lists, stacks, queues, trees and graphs. The implementation and time-space analysis of these data structures is discussed in the context of recursion, sorting and searching algorithms. May not be taken by students with credit for I CSI 310. Only one of I CSI/I ECE 213 may be taken for credit. Must be completed with a grade of C or better to take I CSI 333 or I ECE 332. Prerequisite(s): grade of C or better in I ECE/I CSI 201, or I ECE 141.
+Class Number: 4466
+Course Info: ICSI 300Z Societal Ethical Implications
+Meeting Info: 12:00_AM-12:00_AM Online Hurd,Andrew
+Course Description: Current age challenges for governments, communities and individuals related to development and implementation of computer technologies. General and professional ethics. Analysis of various moral aspects of computing (privacy, security, hacking, etc.) for making responsible decision. Intellectual property concepts such as copyrights, patents and trademarks. Elements of effective professional and technical communication and documentation. Prerequisite(s): any introductory course in computer science or related field; programming experience is a plus.
+Class Number: 5368
+Course Info: ICSI 311 Principles Programming Lang
+Meeting Info: W 10:35_AM-11:30_AM Chemistry 151 Phipps,Michael
+Course Description: Introduction to the design and implementation of programming languages, including language features, paradigms and design decisions. Briefly covers functional and logical programming paradigms and reinforces object-oriented concepts. Discusses interpreters, compilers, transpires and virtual machines, including lexical analysis, parsing, semantic analysis, optimization, code generation. Introduction to automata and state machines. Prerequisite(s): grade of C or better required in I CSI 210 and I CSI 213.
+Class Number: 5369
+Course Info: ICSI 311 Principles Programming Lang
+Meeting Info: M 09:30_AM-10:25_AM Massry Schl of Business 231 Phipps,Michael
+Course Description: Introduction to the design and implementation of programming languages, including language features, paradigms and design decisions. Briefly covers functional and logical programming paradigms and reinforces object-oriented concepts. Discusses interpreters, compilers, transpires and virtual machines, including lexical analysis, parsing, semantic analysis, optimization, code generation. Introduction to automata and state machines. Prerequisite(s): grade of C or better required in I CSI 210 and I CSI 213.
+Class Number: 5978
+Course Info: ICSI 311 Principles Programming Lang
+Meeting Info: TTH 10:30_AM-11:50_AM SL 206 Phipps,Michael
+Course Description: Introduction to the design and implementation of programming languages, including language features, paradigms and design decisions. Briefly covers functional and logical programming paradigms and reinforces object-oriented concepts. Discusses interpreters, compilers, transpires and virtual machines, including lexical analysis, parsing, semantic analysis, optimization, code generation. Introduction to automata and state machines. Prerequisite(s): grade of C or better required in I CSI 210 and I CSI 213.
+Class Number: 6390
+Course Info: ICSI 311 Principles Programming Lang
+Meeting Info: F 01:50_PM-02:45_PM Massry Schl of Business 231
+Course Description: Introduction to the design and implementation of programming languages, including language features, paradigms and design decisions. Briefly covers functional and logical programming paradigms and reinforces object-oriented concepts. Discusses interpreters, compilers, transpires and virtual machines, including lexical analysis, parsing, semantic analysis, optimization, code generation. Introduction to automata and state machines. Prerequisite(s): grade of C or better required in I CSI 210 and I CSI 213.
+Class Number: 9330
+Course Info: ICSI 311 Principles Programming Lang
+Meeting Info: F 03:00_PM-03:55_PM Massry Schl of Business 231 Phipps,Michael
+Course Description: Introduction to the design and implementation of programming languages, including language features, paradigms and design decisions. Briefly covers functional and logical programming paradigms and reinforces object-oriented concepts. Discusses interpreters, compilers, transpires and virtual machines, including lexical analysis, parsing, semantic analysis, optimization, code generation. Introduction to automata and state machines. Prerequisite(s): grade of C or better required in I CSI 210 and I CSI 213.
+Class Number: 5283
+Course Info: ICSI 333 System Fundamentals
+Meeting Info: TTH 12:00_PM-01:20_PM SL 206 Phipps,Michael
+Course Description: Machine representation of numbers (two's compliment and floating point). Concepts of system level programming including dynamic memory management, hardware-software interface, storage management, compilation and linkage, multi-processing, and terminal I/O. Only one of I CSI 333 or I ECE 233 may be taken for credit. Prerequisite(s): grade of C or better in I CSI/I ECE 213.
+Class Number: 5284
+Course Info: ICSI 333 System Fundamentals
+Meeting Info: M 08:25_AM-09:20_AM Massry Schl of Business 231 Phipps,Michael
+Course Description: Machine representation of numbers (two's compliment and floating point). Concepts of system level programming including dynamic memory management, hardware-software interface, storage management, compilation and linkage, multi-processing, and terminal I/O. Only one of I CSI 333 or I ECE 233 may be taken for credit. Prerequisite(s): grade of C or better in I CSI/I ECE 213.
+Class Number: 5285
+Course Info: ICSI 333 System Fundamentals
+Meeting Info: M 11:40_AM-12:35_PM Pine Bush 132 Phipps,Michael
+Course Description: Machine representation of numbers (two's compliment and floating point). Concepts of system level programming including dynamic memory management, hardware-software interface, storage management, compilation and linkage, multi-processing, and terminal I/O. Only one of I CSI 333 or I ECE 233 may be taken for credit. Prerequisite(s): grade of C or better in I CSI/I ECE 213.
+Class Number: 5286
+Course Info: ICSI 333 System Fundamentals
+Meeting Info: F 08:25_AM-09:20_AM Massry Schl of Business 231 Phipps,Michael
+Course Description: Machine representation of numbers (two's compliment and floating point). Concepts of system level programming including dynamic memory management, hardware-software interface, storage management, compilation and linkage, multi-processing, and terminal I/O. Only one of I CSI 333 or I ECE 233 may be taken for credit. Prerequisite(s): grade of C or better in I CSI/I ECE 213.
+Class Number: 8643
+Course Info: ICSI 333 System Fundamentals
+Meeting Info: F 01:10_PM-02:05_PM Massry Schl of Business 129 Phipps,Michael
+Course Description: Machine representation of numbers (two's compliment and floating point). Concepts of system level programming including dynamic memory management, hardware-software interface, storage management, compilation and linkage, multi-processing, and terminal I/O. Only one of I CSI 333 or I ECE 233 may be taken for credit. Prerequisite(s): grade of C or better in I CSI/I ECE 213.
+Class Number: 7785
+Course Info: ICSI 401 Numerical Methods
+Meeting Info: M 06:00_PM-08:50_PM Taconic 122 Kotecha,Ramchandra
+Course Description: Study of practical methods for the numerical solution of a variety of problems on a digital computer. Topics include roots of equations, numerical interpolation, numerical integration and differentiation; the evaluation of mathematical functions, least squares curve fitting; the solution of simultaneous linear equations, and matrix inversion. Prerequisite(s): grade of C better in both I CSI 213 and A MAT 220.
+Class Number: 7698
+Course Info: ICSI 403 Design and Analysis Algorithms
+Meeting Info: MW 10:10_AM-11:30_AM Lecture Center 20 Bogdanov,Petko
+Course Description: Algorithm efficiency based on asymptotic notation and analysis for iterative and recursive algorithms. Algorithm design strategies: iterative, divide-and-conquer, greedy and dynamic programming. Set management including hashing, disjoint sets and heaps. Algorithms on graphs and trees. Prerequisite(s): grade of C or better in both I CSI/I ECE 210 and I CSI/I ECE 213.
+Class Number: 6970
+Course Info: ICSI 404 Computer Architecture Organize
+Meeting Info: TTH 06:00_PM-07:20_PM Biology 248 Marques de Carvalho,Jackson
+Course Description: A quantitative approach to computer architecture and organization that addresses both the software and hardware aspects of performance in modern computing systems. Topics include functional descriptions, operation, and logic design of major system components, such as the central processing unit and memory, and control and communication. Emphasis will be placed on examining the relationship of a system's architecture and organization to application performance. Only one of I CSI/I ECE 404 or I ECE 432 may be taken for credit. Prerequisite(s): grade of C or better in I CSI 333 or I ECE 233 or I ECE 332.
+Class Number: 9335
+Course Info: ICSI 407 Human Computer Interaction
+Meeting Info: TTH 12:00_PM-01:20_PM Biology 248
+Course Description: This course covers the fundamentals and concepts of design, implementation, and evaluation of human-computer interfaces. Topics include human cognitive aspects; user-centered design; design goals and principles; interface and interaction types; prototyping and construction; and evaluation methods. In order to make a balance between theory and practice, emphasis is placed on a course-end project involving design, implementation and evaluation of the user interface for a specific application. Prerequisite(s): grade of C or better in I CSI 311.
+Class Number: 5966
+Course Info: ICSI 409 Formal Methods and Models
+Meeting Info: TTH 03:00_PM-04:20_PM Taconic 122 Ekenna,Chinwe
+Course Description: Abstract concepts that underlie much advanced work in computer science, with major emphasis on finite automata, models of computation, logic, and proof strategies. Applications of those topics in areas such as programming, theory, systems, AI, and software engineering are discussed. Prerequisite(s): grade of C or better in I CSI 311.
+Class Number: 6585
+Course Info: ICSI 409 Formal Methods and Models
+Meeting Info: M 04:30_PM-05:50_PM Humanities 124 Ekenna,Chinwe
+Course Description: Abstract concepts that underlie much advanced work in computer science, with major emphasis on finite automata, models of computation, logic, and proof strategies. Applications of those topics in areas such as programming, theory, systems, AI, and software engineering are discussed. Prerequisite(s): grade of C or better in I CSI 311.
+Class Number: 6586
+Course Info: ICSI 409 Formal Methods and Models
+Meeting Info: M 04:30_PM-05:25_PM Humanities 133 Ekenna,Chinwe
+Course Description: Abstract concepts that underlie much advanced work in computer science, with major emphasis on finite automata, models of computation, logic, and proof strategies. Applications of those topics in areas such as programming, theory, systems, AI, and software engineering are discussed. Prerequisite(s): grade of C or better in I CSI 311.
+Class Number: 6971
+Course Info: ICSI 410 Database Systems
+Meeting Info: MW 11:40_AM-01:00_PM SL 205 Hwang,Jeong-Hyon
+Course Description: This course covers the fundamentals and concepts of design, implementation and use of databases. Topics include database system architectures, data abstractions and models, query languages, relational algebra and calculus, indexing mechanisms, data integrity, rollback and recovery mechanisms, access control, theory of database design, and access methods including interfaces to programming languages. Prerequisite(s): grade of C or better in both I CSI/I ECE 210 and I CSI/I ECE 213.
+Class Number: 6120
+Course Info: ICSI 412 Operating Systems
+Meeting Info: MW 03:00_PM-04:20_PM Lecture Center 4 Phipps,Michael
+Course Description: (Formerly I CSI/I ECE 400.) Design and implementation of operating systems. Topics include historical overview of operating systems and their principles, systems programming, file system organization and I/O, resource allocation, memory management and virtual memory, virtual machines, process scheduling and synchronization of concurrent processes, deadlock detection and prevention, and security. Only one of I CSI/I ECE 400, and I CSI 412 may be taken for credit. Prerequisite(s): I CSI 333 or I ECE 233.
+Class Number: 7188
+Course Info: ICSI 416 Comp Comm Networks
+Meeting Info: TTH 09:00_AM-10:20_AM Pine Bush 248 Zheleva,Mariya
+Course Description: This course covers fundamentals in computer communication networks and the principles of distributed systems that leverage these networks. The course will focus on key Internet application architectures, principles and protocols, covering reliable data transfer and transport protocols; routing and forwarding; data link layer communications and principles of shared media access. Students will also be introduced to various physical layer techniques like error correction and bandwidth efficiency; content delivery networks; and software-defined networks. The students will apply their understanding of networking fundamentals while working on hands-on programming assignments, packet trace analysis and Internet measurements. Prerequisite(s): I CSI 333 or I ECE 233 or I ECE 332, and A MAT 367 or A MAT 370.
+Class Number: 5774
+Course Info: ICSI 418Y Software Engineering
+Meeting Info: TTH 01:30_PM-02:50_PM Taconic 122 Arora,Shashank
+Course Description: This course covers advanced object-oriented design principles and software engineering principles, including understanding various software development methodologies, the software development life cycle, how to work with clients to derive requirements and create architecturally sound software, testing and quality assurance, software maintenance practices and how to build a software engineering team. Project work in contemporary concurrent and object-oriented languages. Only one of I CSI 318 or I CSI 418Y may be taken for credit. Prerequisite(s): Grade of C or better in I CSI 311.
+Class Number: 9336
+Course Info: ICSI 424 Computer Security
+Meeting Info: TTH 03:00_PM-04:20_PM Pine Bush 248 Masoumzadeh,Amir
+Course Description: This course introduces students to the fundamental and technical problems surrounding computer security. The course reviews basic security concepts, design principles, and mechanisms. Throughout the course and based on hands-on exercises, students will develop an in-depth understanding of several vulnerabilities and corresponding countermeasures in system security, web security, and network security areas. Topics include privilege escalation, buffer overflow, race condition, SQL injection, cross-site scripting, packet spoofing, TCP attacks, and firewalls. Prerequisite(s): I CSI 302 or I CSI 333 or I ECE 332.
+Class Number: 9338
+Course Info: ICSI 431 Data Mining
+Meeting Info: TTH 01:30_PM-02:50_PM Humanities 137 Sahebi,Sherry
+Course Description: A course on data mining (finding patterns in data) algorithms and their application to interesting data types and situations. We cover algorithms that address the five core data mining tasks: prediction, classification, estimation, clustering, and associations. Course projects will involve advanced topics such as algorithm developments for handling large data sets, sequential, spatial, and streaming data. Prerequisite(s): A C or better in MAT 220, MAT 367 or MAT 370, and CSI 311.
+Class Number: 8581
+Course Info: ICSI 435 Artificial Intelligence
+Meeting Info: MW 11:40_AM-01:00_PM Taconic 122 Chang,Ming-Ching
+Course Description: An introduction to the broad spectrum of approaches and techniques of Artificial Intelligence, such as search and planning problems, basic machine learning, Markov decision processes, reinforcement learning, Bayesian networks, propositional and first-order logic, and potentially introduction to deep learning. Prerequisite(s): grade of C or better in A MAT 220 or I CSI 311; A MAT 367 or A MAT 370, I CSI 401 and I CSI 403.
+Class Number: 4038
+Course Info: ICSI 451 Bayesian Data Analy/Signal Pro
+Meeting Info: TTH 10:30_AM-11:50_AM Physics 225 Knuth,Kevin
+Course Description: This course will introduce both the principles and practice of Bayesian and maximum entropy methods for data analysis, signal processing, and machine learning. This is a hands-on course that will introduce the use of the MATLAB computing language for software development. Students will learn to write their own Bayesian computer programs to solve problems relevant to physics, chemistry, biology, earth science, and signal processing, as well as hypothesis testing and error analysis. Optimization techniques to be covered include gradient ascent, fixed-point methods, and Markov chain Monte Carlo sampling techniques. Only one of C INF 451, I CSI 451, or A PHY 451/451Y may be taken for credit. Prerequisite(s): A MAT 214 (or equivalent) and I CSI/I ECE 201.
+Class Number: 9339
+Course Info: ICSI 471 Intro to Computer Vision
+Meeting Info: TTH 09:00_AM-10:20_AM Catskill 130 Li,Xin
+Course Description: This course introduces students to Computer Vision and Image Processing. The course starts with image formation, color, image filtering and programming basics with languages such as Python, C++, and Matlab. It also teaches fundamentals of image acquisition, image perception, image interpolation, image restoration, image enhancement, edge detection, corner detection, image segmentation, mathematical morphology, and object detection. This course also covers some basics of background modeling, visual tracking, feature matching, scene parsing, and projective geometry that are related to computer vision. The course focuses on both the theory and the practical application of computer vision and image processing. Students will learn hands-on programming implementation. Prerequisite(s): grade of C or better in I CSI 210, and I CSI 213, A MAT 220, and either A MAT 367 or A MAT 370.
+Class Number: 6758
+Course Info: ICSI 490 Internship Computer Science
+Meeting Info: 12:00_AM-12:00_AM Arranged Wang,Qi
+Course Description: Research or development experience with University units or external agencies or companies requiring significant solutions of problems in areas such as software design, development, programming of tests or extensions, etc. in a practical environment. The relevance to computer science and the technical level of the proposed internship, and the intern's qualifications must be approved by the department. A written report must be accepted by the department before the end of the internship semester. May be repeated for credit. Prerequisite(s): grade of C or better in I CSI/I ECE 213. Students must have junior year standing with minimum GPA of 2.5. S/U Graded.
+Class Number: 7081
+Course Info: ICSI 490 Internship Computer Science
+Meeting Info: 12:00_AM-12:00_AM Arranged Phipps,Michael
+Course Description: Research or development experience with University units or external agencies or companies requiring significant solutions of problems in areas such as software design, development, programming of tests or extensions, etc. in a practical environment. The relevance to computer science and the technical level of the proposed internship, and the intern's qualifications must be approved by the department. A written report must be accepted by the department before the end of the internship semester. May be repeated for credit. Prerequisite(s): grade of C or better in I CSI/I ECE 213. Students must have junior year standing with minimum GPA of 2.5. S/U Graded.
+Class Number: 8847
+Course Info: ICSI 490 Internship Computer Science
+Meeting Info: 12:00_AM-12:00_AM Arranged Atrey,Pradeep
+Course Description: Research or development experience with University units or external agencies or companies requiring significant solutions of problems in areas such as software design, development, programming of tests or extensions, etc. in a practical environment. The relevance to computer science and the technical level of the proposed internship, and the intern's qualifications must be approved by the department. A written report must be accepted by the department before the end of the internship semester. May be repeated for credit. Prerequisite(s): grade of C or better in I CSI/I ECE 213. Students must have junior year standing with minimum GPA of 2.5. S/U Graded.
+Class Number: 3409
+Course Info: ICSI 497 Independent Study Computer Sci
+Meeting Info: 12:00_AM-12:00_AM Arranged
+Course Description: Independent study of advanced topics under the guidance of a computer science faculty member which are not covered in regularly scheduled courses. Three to four hours per week per semester credit should be spent on readings, technology research, problem solving, experimentation with student created and existing software, faculty discussion, etc., culminating in an acceptable and significant written report or paper. May be repeated for credit. Prerequisite(s): junior or senior standing or equivalent experience, at least I CSI/I ECE 213 with a grade of C or better, and the permission of instructor with whom the student wishes to study.
+Class Number: 8929
+Course Info: ICSI 497 Independent Study Computer Sci
+Meeting Info: 12:00_AM-12:00_AM Arranged Arora,Shashank
+Course Description: Independent study of advanced topics under the guidance of a computer science faculty member which are not covered in regularly scheduled courses. Three to four hours per week per semester credit should be spent on readings, technology research, problem solving, experimentation with student created and existing software, faculty discussion, etc., culminating in an acceptable and significant written report or paper. May be repeated for credit. Prerequisite(s): junior or senior standing or equivalent experience, at least I CSI/I ECE 213 with a grade of C or better, and the permission of instructor with whom the student wishes to study.
+Class Number: 6976
+Course Info: ICSI 499 Capstone Project Computer Sci
+Meeting Info: W 04:30_PM-07:20_PM Catskill 130 Atrey,Pradeep
+Course Description: This course involves integration and application of knowledge and skills acquired in earlier course work. Students participate in the design and production of a large, modular program typical of those encountered in business, industry, and research. Only one of I CSI 495 and I CSI 499 may be taken for credit. Prerequisite(s): Twelve credits at the 400 level of computer science courses, including I CSI 418Y.
+Class Number: 6969
+Course Info: ICSI 500 Operating Systems
+Meeting Info: TTH 07:30_PM-08:50_PM Biology 248 Marques de Carvalho,Jackson
+Course Description: Introduction to operating systems. Topics include processes, concurrency, synchronization, deadlock, memory management, segmentation, paging, replacement policies, caching, interprocess communication, file systems, and protection. Heavy emphasis on abstractions, mechanisms, policies, and design. Prerequisites: Recommended - Students should have knowledge of computer systems, probability, and computer organization.
+Class Number: 9341
+Course Info: ICSI 501 Comp Linear Algebra
+Meeting Info: WF 01:10_PM-02:30_PM Pine Bush 248 Liu,Chong
+Course Description: Review of numerical nonlinear algebra for one equation in one unknown. Numerical methods for solving systems of nonlinear equations including Quasi-Newton methods and descent techniques. Numerical solution of systems of linear equations including Gaussian elimination, LUD factorization, and iterative methods. Methods for banded and sparse systems. Approximation by splines. Prerequisite: Csi 401 or equivalent and knowledge of linear algebra, multi-variable calculus and MATLAB required. Only one of Csi 501 or Mat 522 may be taken for credit.
+Class Number: 6379
+Course Info: ICSI 503 Algorithms & Data Struc
+Meeting Info: TTH 09:00_AM-10:20_AM Lecture Center 5 Chelmis,Charalampos
+Course Description: Review of discrete mathematics and probability used in algorithm design and analysis. Analyses of divide-and-conquer algorithms, number-theoretical algorithms, and algorithms for sorting, searching, and order statistics. Basic data structures. Basic graph algorithms for topological sorting, constructing minimum cost spanning trees, and shortest path problems. Prerequisites: C or better in Csi 521 or passing the Departmental examination in discrete mathematics.
+Class Number: 8693
+Course Info: ICSI 508 Database Systems I
+Meeting Info: TTH 10:30_AM-11:50_AM Biology 248
+Course Description: Basic concepts of a database system, with emphasis on database schema design, data manipulation languages, and query languages. Data models. Relational databases, functional dependencies, normal forms. Relational calculus, relational algebra, SEQUEL, Query-by-Example. The CODASYL network model: data definition and data manipulation languages. Computer project using a database system. User viewpoint of concurrent access. Prerequisites: C or better in Csi 521 or passing the Departmental examination in discrete mathematics.
+Class Number: 6587
+Course Info: ICSI 509 Automata and Theory of Computn
+Meeting Info: TTH 12:00_PM-01:20_PM Pine Bush 248 Narendran,Paliath
+Course Description: Introduction to logic and proof techniques, automata theory, and computational complexity. Specific topics include regular grammars, context-free grammars, and phrase-structured languages, parsing algorithms, Turing machines, NP-completeness, and undecidability. Prerequisite: C or better in CSI 521 or passing the Departmental examination in discrete mathematics.
+Class Number: 6588
+Course Info: ICSI 509 Automata and Theory of Computn
+Meeting Info: TH 01:30_PM-02:50_PM Massry Schl of Business 129 Narendran,Paliath
+Course Description: Introduction to logic and proof techniques, automata theory, and computational complexity. Specific topics include regular grammars, context-free grammars, and phrase-structured languages, parsing algorithms, Turing machines, NP-completeness, and undecidability. Prerequisite: C or better in CSI 521 or passing the Departmental examination in discrete mathematics.
+Class Number: 6589
+Course Info: ICSI 509 Automata and Theory of Computn
+Meeting Info: T 09:00_AM-10:20_AM Massry Schl of Business 221 Narendran,Paliath
+Course Description: Introduction to logic and proof techniques, automata theory, and computational complexity. Specific topics include regular grammars, context-free grammars, and phrase-structured languages, parsing algorithms, Turing machines, NP-completeness, and undecidability. Prerequisite: C or better in CSI 521 or passing the Departmental examination in discrete mathematics.
+Class Number: 7189
+Course Info: ICSI 516 Comp Communications Networks
+Meeting Info: TTH 09:00_AM-10:20_AM Pine Bush 248 Zheleva,Mariya
+Course Description: This course covers fundamentals in computer communication networks and the principles of distributed systems that leverage these networks. The course will focus on key Internet application architectures, principles and protocols, covering reliable data transfer and transport protocols; routing and forwarding; data link layer communications and principles of shared media access. Students will also be introduced to various physical layer techniques like error correction and bandwidth efficiency; content delivery networks; and software-defined networks. The students will apply their understanding of networking fundamentals while working on hands-on programming assignments, packet trace analysis and Internet measurements. Prerequisites: Recommended - Students should have knowledge of computer systems and probability. Students who have received credit for ICSI/IECE416 cannot receive credit for this course.
+Class Number: 5159
+Course Info: ICSI 518 Software Engineering
+Meeting Info: W 09:30_AM-10:25_AM Biology 248 Chen,Mei-Hwa
+Course Description: Software engineering principles, the role of abstraction in programming, abstract data types, modularization and module interfaces, specifications, and teamwork. Concurrent programming models, synchronization and interprocess communication. Project work in contemporary concurrent and object-oriented languages. Prerequisites: Graduate CSI standing or permission of instructor.
+Class Number: 8488
+Course Info: ICSI 518 Software Engineering
+Meeting Info: F 11:40_AM-02:30_PM Taconic 122 Chen,Mei-Hwa
+Course Description: Software engineering principles, the role of abstraction in programming, abstract data types, modularization and module interfaces, specifications, and teamwork. Concurrent programming models, synchronization and interprocess communication. Project work in contemporary concurrent and object-oriented languages. Prerequisites: Graduate CSI standing or permission of instructor.
+Class Number: 8533
+Course Info: ICSI 518 Software Engineering
+Meeting Info: W 10:35_AM-11:30_AM Humanities 020 Chen,Mei-Hwa
+Course Description: Software engineering principles, the role of abstraction in programming, abstract data types, modularization and module interfaces, specifications, and teamwork. Concurrent programming models, synchronization and interprocess communication. Project work in contemporary concurrent and object-oriented languages. Prerequisites: Graduate CSI standing or permission of instructor.
+Class Number: 9342
+Course Info: ICSI 519 Advanced Programming Concepts
+Meeting Info: MW 11:40_AM-01:00_PM SL 206 Hono II,Daniel
+Course Description: The main focus of the course is on declarative programming and axiomatic semantics. In declarative programming we cover the Functional Programming (FP) and the Logic Programming (LP) paradigms. The emphasis in functional programming will be on programming with higher-order functions, and polymorphism as in the programing language ML. In Logic Programming we cover unification, SLD-resolution and backtracking, as in Prolog. Also covered are Floyd-Hoare axiomatic semantics, and verification of programs. Prerequisite: CSI graduate standing.
+Class Number: 5386
+Course Info: ICSI 521 Discrete Math with Application
+Meeting Info: MW 03:00_PM-04:20_PM Pine Bush 248 Narendran,Paliath
+Course Description: Deep coverage of the content of discrete mathematics at the graduate level. Proofs by induction, recursive definitions, and combinatorial analysis. Introduction to recurrence equations, graph theory, and abstract algebra. Applications to proofs, correctness, and analysis of combinatorial and algebraic algorithms. Prerequisite: Graduate CSI standing or permission of instructor.
+Class Number: 7772
+Course Info: ICSI 522 Introduction to VLSI
+Meeting Info: MW 06:00_PM-07:20_PM EN 101 Potluri,Seetal
+Course Description: An introduction to Very Large Scale Integrated (VLSI) circuit design. The device, circuit, and system aspects of VLSI design are covered in an integrated fashion. Emphasis is placed on NMOS, PMOS and CMOS technology. Using transistors, simple gates such as XOR, AND, OR, AOI, OAI, and flip flops, are constructed and simulated using industry standard layout and simulation tools. Students who have received credit for IECE420 cannot receive credit for this course. Recommended prerequisites: Either Ece 231 and Ece 300 or Csi 404 and Phy 415, or equivalent.
+Class Number: 9337
+Course Info: ICSI 524 Computer Security
+Meeting Info: TTH 03:00_PM-04:20_PM Pine Bush 248 Masoumzadeh,Amir
+Course Description: This course introduces students to the fundamental and technical problems surrounding computer security. The course reviews basic security concepts, design principles, and mechanisms. Throughout the course and based on hands-on exercises, students will develop an in-depth understanding of several vulnerabilities and corresponding countermeasures in system security, web security, and network security areas. Topics include privilege escalation, buffer overflow, race condition, SQL injection, cross-site scripting, packet spoofing, TCP attacks, and firewalls. Prerequisites: C or above in CSI 521 or passing the Departmental examination in discrete math. Students who have received credit for CSI 424 cannot receive credit for this course.
+Class Number: 8170
+Course Info: ICSI 529 Probability and Computing
+Meeting Info: TTH 01:30_PM-02:50_PM Pine Bush 258 Magner,Abram
+Course Description: An introduction to applications of probability and analysis in computer science and related areas. This course serves as a mathematical foundation for machine learning theory. Topics include an introduction to axiomatic probability, notions of convergence, limit theorems, first and second moment methods, martingales, concentration of measure (Chernoff, Hoeffding, McDiarmid, etc.), randomized algorithms (drawing largely from graph analysis, cryptography & number theory, hashing, numerical linear algebra), sampling, random graphs, Markov chains, random walks on graphs, basics of estimation theory, statistical learning theory, and information theory for statistical sample complexity bounds. Applications to algorithm design and statistical learning on discrete random structures will be emphasized. Prerequisite: Csi 503. Student should have knowledge of probability and statistics.
+Class Number: 9343
+Course Info: ICSI 531 Data Mining
+Meeting Info: MW 03:00_PM-04:20_PM Pine Bush 258 Bogdanov,Petko
+Course Description: A course on data mining (finding patterns in data) algorithms and their application to interesting data types and situations. We cover the basic algorithms that address the five core data mining tasks: prediction, classification, estimation, clustering and associations. Course projects will involve advanced topics such as algorithm developments for handling large data sets, sequential, spatial and streaming data. Prerequisite: C or above in CSI 521 or passing the Departmental examination in discrete math. Recommended - Students should have knowledge of data structures, linear algebra, and statistics.
+Class Number: 8582
+Course Info: ICSI 535 Artificial Intelligence I
+Meeting Info: MW 11:40_AM-01:00_PM Taconic 122 Chang,Ming-Ching
+Course Description: A first course in artificial intelligence (AI) introducing basic concepts and techniques. Topics include problem representation, production systems, heuristic search, predicate logic, and structured representation of knowledge. Techniques of sample search and sample problem solving systems are represented. Exercises in a selected AI programming language. Prerequisites: C or better in Csi 521 or passing the Departmental examination in discrete mathematics. Students who received credit for ICSI435 cannot receive credit for this course.
+Class Number: 4039
+Course Info: ICSI 551 Bayesian Data Analysis
+Meeting Info: TTH 10:30_AM-11:50_AM Physics 225 Knuth,Kevin
+Course Description: This course will introduce both the principles and practice of Bayesian and maximum entropy methods for data analysis, signal processing, and machine learning. This is a hands-on course that will introduce MATLAB computing language for software development. Students will learn to write their own Bayesian computer programs to solve problems relevant to physics, chemistry, biology, earth science, and signal processing, as well as hypothesis testing and error analysis. Optimization techniques to be covered include gradient ascent, fixed-point methods, and Markov chain Monte Carlo sampling techniques. Prerequisites: Csi 201, Mat 214, or equivalents, or permission of instructor. Phy 509 or equivalent programming experience with permission of the instructor. Students who have received credit for APHY/ICSI/CINF451 cannot receive credit for this course.
+Class Number: 6508
+Course Info: ICSI 553 Cyber-Physical Systems
+Meeting Info: F 11:40_AM-02:30_PM EN 101 Saha,Dola
+Course Description: This course is an introduction to the basics of models, analysis tools, and control for embedded systems operating in real time. Topics include models of computation, basic analysis, control, and systems simulation, interfacing with the physical world, mapping to embedded platforms and distributed embedded systems. This course has a lab component. Course fee applies. Consult the Schedule of Classes. Recommended prerequisites: ECE 334 or CSI 404 and either ECE 371 or APHY 415. Students who have received credit for IECE453 cannot receive credit for this course.
+Class Number: 8675
+Course Info: ICSI 553 Cyber-Physical Systems
+Meeting Info: MW 11:40_AM-01:00_PM Husted 014 Saha,Dola
+Course Description: This course is an introduction to the basics of models, analysis tools, and control for embedded systems operating in real time. Topics include models of computation, basic analysis, control, and systems simulation, interfacing with the physical world, mapping to embedded platforms and distributed embedded systems. This course has a lab component. Course fee applies. Consult the Schedule of Classes. Recommended prerequisites: ECE 334 or CSI 404 and either ECE 371 or APHY 415. Students who have received credit for IECE453 cannot receive credit for this course.
+Class Number: 9340
+Course Info: ICSI 571 Intro to Computer Vision
+Meeting Info: TTH 09:00_AM-10:20_AM Catskill 130 Li,Xin
+Course Description: This course introduces students to Computer Vision and Image Processing. The course starts with image formation, color, image filtering and programming basics with languages such as Python, C++, and Matlab. It also teaches fundamentals of image acquisition, image perception, image interpolation, image restoration, image enhancement, edge detection, corner detection, image segmentation, mathematical morphology, and object detection. This course also covers some basics of background modeling, visual tracking, feature matching, scene parsing, and projective geometry that are related to computer vision. The course focuses on both the theory and the practical application of computer vision and image processing. Students will learn hands-on programming implementation. Students who received credit for Csi 471 cannot receive credit for this course. Students should have knowledge of programming, linear algebra, and probability and statistics.
+Class Number: 9345
+Course Info: ICSI 636 Natural Language Processing
+Meeting Info: TTH 03:00_PM-04:20_PM Humanities 024 Wang,Haoyu
+Course Description: Construction of programs that use human language. Topics include morphology, syntax, parsing, semantic representation, resolution of ambiguity, generation, and discourse. Prerequisite: Csi 535 or permission of instructor.
+Class Number: 3410
+Course Info: ICSI 680 Master's Project
+Meeting Info: 12:00_AM-12:00_AM Arranged
+Course Description: Master's level project under faculty supervision. Satisfactory completion fulfills project requirement for the M.S. in computer science. May be repeated for credit with permission of department. Prerequisite: Completion of at least 18 graduate credits towards the Computer Science MS degree.
+Class Number: 7890
+Course Info: ICSI 680 Master's Project
+Meeting Info: T 04:30_PM-07:20_PM Lecture Center 6 Offutt,Jeff
+Course Description: Master's level project under faculty supervision. Satisfactory completion fulfills project requirement for the M.S. in computer science. May be repeated for credit with permission of department. Prerequisite: Completion of at least 18 graduate credits towards the Computer Science MS degree.
+Class Number: 4868
+Course Info: ICSI 680C Master's Research Project Cont
+Meeting Info: 12:00_AM-12:00_AM Arranged Ekenna,Chinwe
+Course Description: Course grading is Load Only and does not earn credit. Appropriate for master's students engaged in research on the master's project beyond the level applicable to their degree program.
+Class Number: 5960
+Course Info: ICSI 680C Master's Research Project Cont
+Meeting Info: 12:00_AM-12:00_AM Arranged Chen,Mei-Hwa
+Course Description: Course grading is Load Only and does not earn credit. Appropriate for master's students engaged in research on the master's project beyond the level applicable to their degree program.
+Class Number: 6234
+Course Info: ICSI 680C Master's Research Project Cont
+Meeting Info: 12:00_AM-12:00_AM Arranged Narendran,Paliath
+Course Description: Course grading is Load Only and does not earn credit. Appropriate for master's students engaged in research on the master's project beyond the level applicable to their degree program.
+Class Number: 3415
+Course Info: ICSI 694 Directed Readings in Comp Sci
+Meeting Info: 12:00_AM-12:00_AM Arranged
+Course Description: Directed reading in a particular area of computer science specialization under supervision of a departmental faculty member. May be repeated for credit with permission of the department. Prerequisite: Consent of department.
+Class Number: 3420
+Course Info: ICSI 697 Independent Study and Research
+Meeting Info: 12:00_AM-12:00_AM Arranged
+Course Description: Independent study and research in a particular area of computer science specialization under supervision of a departmental faculty member. May be repeated for credit with permission of the department. Prerequisite: Consent of department.
+Class Number: 5835
+Course Info: ICSI 698 Internship
+Meeting Info: 12:00_AM-12:00_AM Arranged Kuperman,Vladimir
+Course Description: Directed application of a particular area of computer science specialization via public or private sector employment. Must be under supervision of a departmental faculty member. The internship must demonstrate the ability to put science and/or managerial preparation to work in business, industry, or government. May not be repeated for credit. Qualifies for CPT for one semester only. Prerequisite: Permission of the department.
+Class Number: 5983
+Course Info: ICSI 698 Internship
+Meeting Info: 12:00_AM-12:00_AM Arranged Atrey,Pradeep
+Course Description: Directed application of a particular area of computer science specialization via public or private sector employment. Must be under supervision of a departmental faculty member. The internship must demonstrate the ability to put science and/or managerial preparation to work in business, industry, or government. May not be repeated for credit. Qualifies for CPT for one semester only. Prerequisite: Permission of the department.
+Class Number: 7811
+Course Info: ICSI 698 Internship
+Meeting Info: 12:00_AM-12:00_AM Arranged Ekenna,Chinwe
+Course Description: Directed application of a particular area of computer science specialization via public or private sector employment. Must be under supervision of a departmental faculty member. The internship must demonstrate the ability to put science and/or managerial preparation to work in business, industry, or government. May not be repeated for credit. Qualifies for CPT for one semester only. Prerequisite: Permission of the department.
+Class Number: 7813
+Course Info: ICSI 698 Internship
+Meeting Info: 12:00_AM-12:00_AM Arranged Masoumzadeh,Amir
+Course Description: Directed application of a particular area of computer science specialization via public or private sector employment. Must be under supervision of a departmental faculty member. The internship must demonstrate the ability to put science and/or managerial preparation to work in business, industry, or government. May not be repeated for credit. Qualifies for CPT for one semester only. Prerequisite: Permission of the department.
+Class Number: 7814
+Course Info: ICSI 698 Internship
+Meeting Info: 12:00_AM-12:00_AM Arranged Hwang,Jeong-Hyon
+Course Description: Directed application of a particular area of computer science specialization via public or private sector employment. Must be under supervision of a departmental faculty member. The internship must demonstrate the ability to put science and/or managerial preparation to work in business, industry, or government. May not be repeated for credit. Qualifies for CPT for one semester only. Prerequisite: Permission of the department.
+Class Number: 7862
+Course Info: ICSI 698 Internship
+Meeting Info: 12:00_AM-12:00_AM Arranged Bogdanov,Petko
+Course Description: Directed application of a particular area of computer science specialization via public or private sector employment. Must be under supervision of a departmental faculty member. The internship must demonstrate the ability to put science and/or managerial preparation to work in business, industry, or government. May not be repeated for credit. Qualifies for CPT for one semester only. Prerequisite: Permission of the department.
+Class Number: 7878
+Course Info: ICSI 698 Internship
+Meeting Info: 12:00_AM-12:00_AM Arranged Li,Xin
+Course Description: Directed application of a particular area of computer science specialization via public or private sector employment. Must be under supervision of a departmental faculty member. The internship must demonstrate the ability to put science and/or managerial preparation to work in business, industry, or government. May not be repeated for credit. Qualifies for CPT for one semester only. Prerequisite: Permission of the department.
+Class Number: 8907
+Course Info: ICSI 698 Internship
+Meeting Info: 12:00_AM-12:00_AM Arranged Narendran,Paliath
+Course Description: Directed application of a particular area of computer science specialization via public or private sector employment. Must be under supervision of a departmental faculty member. The internship must demonstrate the ability to put science and/or managerial preparation to work in business, industry, or government. May not be repeated for credit. Qualifies for CPT for one semester only. Prerequisite: Permission of the department.
+Class Number: 5961
+Course Info: ICSI 698C Master's Internship Continuati
+Meeting Info: 12:00_AM-12:00_AM Arranged Chen,Mei-Hwa
+Course Description: Course grading is Load Only and does not earn credit. Appropriate for master's students engaged in the master's internship beyond the level applicable to their degree program.
+Class Number: 7812
+Course Info: ICSI 698C Master's Internship Continuati
+Meeting Info: 12:00_AM-12:00_AM Arranged Ekenna,Chinwe
+Course Description: Course grading is Load Only and does not earn credit. Appropriate for master's students engaged in the master's internship beyond the level applicable to their degree program.
+Class Number: 3424
+Course Info: ICSI 699 Master's Thesis
+Meeting Info: 12:00_AM-12:00_AM Arranged
+Course Description: Original independent research at the masters level under direction of a member of computer science faculty. Prerequisite: Acceptance of thesis proposal by faculty member.
+Class Number: 4951
+Course Info: ICSI 699C Master's Thesis Continuation
+Meeting Info: 12:00_AM-12:00_AM Arranged Narendran,Paliath
+Course Description: Course grading is Load Only and does not earn credit. Appropriate for master's students engaged in research and writing of the master's thesis beyond the level applicable to their degree program.
+Class Number: 4952
+Course Info: ICSI 699C Master's Thesis Continuation
+Meeting Info: 12:00_AM-12:00_AM Arranged Narendran,Paliath
+Course Description: Course grading is Load Only and does not earn credit. Appropriate for master's students engaged in research and writing of the master's thesis beyond the level applicable to their degree program.
+Class Number: 5453
+Course Info: ICSI 699C Master's Thesis Continuation
+Meeting Info: 12:00_AM-12:00_AM Arranged Bogdanov,Petko
+Course Description: Course grading is Load Only and does not earn credit. Appropriate for master's students engaged in research and writing of the master's thesis beyond the level applicable to their degree program.
+Class Number: 3428
+Course Info: ICSI 890 Independent Study and Research
+Meeting Info: 12:00_AM-12:00_AM Arranged
+Course Description: Independent study at the doctoral level under the direction of a member of the computer science faculty. May be repeated for credit. Prerequisite: Consent of computer science department doctoral committee.
+Class Number: 3431
+Course Info: ICSI 899 Doctoral Research
+Meeting Info: 12:00_AM-12:00_AM Arranged
+Course Description: Required of all candidates completing the degree of Doctor of Philosophy. Registration for this course is limited to doctoral students who have been admitted to candidacy. Course grading is Load Only and does not earn credit.
