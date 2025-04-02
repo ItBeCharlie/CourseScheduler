@@ -56,23 +56,23 @@ Meeting Info: W 10:35_AM-11:30_AM Massry Schl of Business 221 Kuperman,Vladimir
 Course Description: This course first introduces with the elementary concepts of computer science such as CPU, memory, I/O devices and binary number system. It then focuses on developing basic programming skills. The topics include input and output data, data types, control structures, functions/methods, arrays, procedural and object-oriented programming concepts, and program debugging and compilation. Only one of I CSI/I ECE 201 may be taken for credit. Prerequisite(s): no prerequisite; general mathematical knowledge and computer skills are recommended.
 Class Number: 8722
 Course Info: ICSI 201 Intro Comp Sci
-Meeting Info: MW 03:00_PM-04:20_PM Taconic 122 Hono II,Daniel
+Meeting Info: MW 03:00_PM-04:20_PM Taconic 122 Hono_II,Daniel
 Course Description: This course first introduces with the elementary concepts of computer science such as CPU, memory, I/O devices and binary number system. It then focuses on developing basic programming skills. The topics include input and output data, data types, control structures, functions/methods, arrays, procedural and object-oriented programming concepts, and program debugging and compilation. Only one of I CSI/I ECE 201 may be taken for credit. Prerequisite(s): no prerequisite; general mathematical knowledge and computer skills are recommended.
 Class Number: 8724
 Course Info: ICSI 201 Intro Comp Sci
-Meeting Info: F 09:30_AM-10:25_AM Humanities 108 Hono II,Daniel
+Meeting Info: F 09:30_AM-10:25_AM Humanities 108 Hono_II,Daniel
 Course Description: This course first introduces with the elementary concepts of computer science such as CPU, memory, I/O devices and binary number system. It then focuses on developing basic programming skills. The topics include input and output data, data types, control structures, functions/methods, arrays, procedural and object-oriented programming concepts, and program debugging and compilation. Only one of I CSI/I ECE 201 may be taken for credit. Prerequisite(s): no prerequisite; general mathematical knowledge and computer skills are recommended.
 Class Number: 8725
 Course Info: ICSI 201 Intro Comp Sci
-Meeting Info: F 10:35_AM-11:30_AM Taconic B031 Hono II,Daniel
+Meeting Info: F 10:35_AM-11:30_AM Taconic B031 Hono_II,Daniel
 Course Description: This course first introduces with the elementary concepts of computer science such as CPU, memory, I/O devices and binary number system. It then focuses on developing basic programming skills. The topics include input and output data, data types, control structures, functions/methods, arrays, procedural and object-oriented programming concepts, and program debugging and compilation. Only one of I CSI/I ECE 201 may be taken for credit. Prerequisite(s): no prerequisite; general mathematical knowledge and computer skills are recommended.
 Class Number: 8726
 Course Info: ICSI 201 Intro Comp Sci
-Meeting Info: F 11:40_AM-12:35_PM Humanities 108 Hono II,Daniel
+Meeting Info: F 11:40_AM-12:35_PM Humanities 108 Hono_II,Daniel
 Course Description: This course first introduces with the elementary concepts of computer science such as CPU, memory, I/O devices and binary number system. It then focuses on developing basic programming skills. The topics include input and output data, data types, control structures, functions/methods, arrays, procedural and object-oriented programming concepts, and program debugging and compilation. Only one of I CSI/I ECE 201 may be taken for credit. Prerequisite(s): no prerequisite; general mathematical knowledge and computer skills are recommended.
 Class Number: 8727
 Course Info: ICSI 201 Intro Comp Sci
-Meeting Info: F 12:45_PM-01:40_PM Taconic B031 Hono II,Daniel
+Meeting Info: F 12:45_PM-01:40_PM Taconic B031 Hono_II,Daniel
 Course Description: This course first introduces with the elementary concepts of computer science such as CPU, memory, I/O devices and binary number system. It then focuses on developing basic programming skills. The topics include input and output data, data types, control structures, functions/methods, arrays, procedural and object-oriented programming concepts, and program debugging and compilation. Only one of I CSI/I ECE 201 may be taken for credit. Prerequisite(s): no prerequisite; general mathematical knowledge and computer skills are recommended.
 Class Number: 9312
 Course Info: ICSI 201 Intro Comp Sci
@@ -116,15 +116,15 @@ Meeting Info: M 11:40_AM-12:35_PM Humanities 109 Kuperman,Vladimir
 Course Description: Mathematical reasoning, propositions, predicates and quantifiers; Boolean algebra, logic minimization; sets, functions, sequences, matrix algebra; mathematical induction and recursion; number theory, modular arithmetic, counting, permutations and combinations. Only one of I CSI/I ECE 210 may be taken for credit. Prerequisite(s) or corequisite(s): A MAT 112.
 Class Number: 8732
 Course Info: ICSI 210 Discrete Structures
-Meeting Info: MW 10:10_AM-11:30_AM SL 206 Hono II,Daniel
+Meeting Info: MW 10:10_AM-11:30_AM SL 206 Hono_II,Daniel
 Course Description: Mathematical reasoning, propositions, predicates and quantifiers; Boolean algebra, logic minimization; sets, functions, sequences, matrix algebra; mathematical induction and recursion; number theory, modular arithmetic, counting, permutations and combinations. Only one of I CSI/I ECE 210 may be taken for credit. Prerequisite(s) or corequisite(s): A MAT 112.
 Class Number: 8734
 Course Info: ICSI 210 Discrete Structures
-Meeting Info: F 10:35_AM-11:30_AM Humanities 123 Hono II,Daniel
+Meeting Info: F 10:35_AM-11:30_AM Humanities 123 Hono_II,Daniel
 Course Description: Mathematical reasoning, propositions, predicates and quantifiers; Boolean algebra, logic minimization; sets, functions, sequences, matrix algebra; mathematical induction and recursion; number theory, modular arithmetic, counting, permutations and combinations. Only one of I CSI/I ECE 210 may be taken for credit. Prerequisite(s) or corequisite(s): A MAT 112.
 Class Number: 8735
 Course Info: ICSI 210 Discrete Structures
-Meeting Info: F 11:40_AM-12:35_PM Humanities 024 Hono II,Daniel
+Meeting Info: F 11:40_AM-12:35_PM Humanities 024 Hono_II,Daniel
 Course Description: Mathematical reasoning, propositions, predicates and quantifiers; Boolean algebra, logic minimization; sets, functions, sequences, matrix algebra; mathematical induction and recursion; number theory, modular arithmetic, counting, permutations and combinations. Only one of I CSI/I ECE 210 may be taken for credit. Prerequisite(s) or corequisite(s): A MAT 112.
 Class Number: 5394
 Course Info: ICSI 213 Data Structures
@@ -172,7 +172,7 @@ Meeting Info: TTH 10:30_AM-11:50_AM SL 206 Phipps,Michael
 Course Description: Introduction to the design and implementation of programming languages, including language features, paradigms and design decisions. Briefly covers functional and logical programming paradigms and reinforces object-oriented concepts. Discusses interpreters, compilers, transpires and virtual machines, including lexical analysis, parsing, semantic analysis, optimization, code generation. Introduction to automata and state machines. Prerequisite(s): grade of C or better required in I CSI 210 and I CSI 213.
 Class Number: 6390
 Course Info: ICSI 311 Principles Programming Lang
-Meeting Info: F 01:50_PM-02:45_PM Massry Schl of Business 231
+Meeting Info: F 01:50_PM-02:45_PM Massry Schl of Business 231, TA1
 Course Description: Introduction to the design and implementation of programming languages, including language features, paradigms and design decisions. Briefly covers functional and logical programming paradigms and reinforces object-oriented concepts. Discusses interpreters, compilers, transpires and virtual machines, including lexical analysis, parsing, semantic analysis, optimization, code generation. Introduction to automata and state machines. Prerequisite(s): grade of C or better required in I CSI 210 and I CSI 213.
 Class Number: 9330
 Course Info: ICSI 311 Principles Programming Lang
@@ -208,11 +208,11 @@ Meeting Info: MW 10:10_AM-11:30_AM Lecture Center 20 Bogdanov,Petko
 Course Description: Algorithm efficiency based on asymptotic notation and analysis for iterative and recursive algorithms. Algorithm design strategies: iterative, divide-and-conquer, greedy and dynamic programming. Set management including hashing, disjoint sets and heaps. Algorithms on graphs and trees. Prerequisite(s): grade of C or better in both I CSI/I ECE 210 and I CSI/I ECE 213.
 Class Number: 6970
 Course Info: ICSI 404 Computer Architecture Organize
-Meeting Info: TTH 06:00_PM-07:20_PM Biology 248 Marques de Carvalho,Jackson
+Meeting Info: TTH 06:00_PM-07:20_PM Biology 248 Marques_de_Carvalho,Jackson
 Course Description: A quantitative approach to computer architecture and organization that addresses both the software and hardware aspects of performance in modern computing systems. Topics include functional descriptions, operation, and logic design of major system components, such as the central processing unit and memory, and control and communication. Emphasis will be placed on examining the relationship of a system's architecture and organization to application performance. Only one of I CSI/I ECE 404 or I ECE 432 may be taken for credit. Prerequisite(s): grade of C or better in I CSI 333 or I ECE 233 or I ECE 332.
 Class Number: 9335
 Course Info: ICSI 407 Human Computer Interaction
-Meeting Info: TTH 12:00_PM-01:20_PM Biology 248
+Meeting Info: TTH 12:00_PM-01:20_PM Biology 248 TA2
 Course Description: This course covers the fundamentals and concepts of design, implementation, and evaluation of human-computer interfaces. Topics include human cognitive aspects; user-centered design; design goals and principles; interface and interaction types; prototyping and construction; and evaluation methods. In order to make a balance between theory and practice, emphasis is placed on a course-end project involving design, implementation and evaluation of the user interface for a specific application. Prerequisite(s): grade of C or better in I CSI 311.
 Class Number: 5966
 Course Info: ICSI 409 Formal Methods and Models
@@ -288,7 +288,7 @@ Meeting Info: W 04:30_PM-07:20_PM Catskill 130 Atrey,Pradeep
 Course Description: This course involves integration and application of knowledge and skills acquired in earlier course work. Students participate in the design and production of a large, modular program typical of those encountered in business, industry, and research. Only one of I CSI 495 and I CSI 499 may be taken for credit. Prerequisite(s): Twelve credits at the 400 level of computer science courses, including I CSI 418Y.
 Class Number: 6969
 Course Info: ICSI 500 Operating Systems
-Meeting Info: TTH 07:30_PM-08:50_PM Biology 248 Marques de Carvalho,Jackson
+Meeting Info: TTH 07:30_PM-08:50_PM Biology 248 Marques_de_Carvalho,Jackson
 Course Description: Introduction to operating systems. Topics include processes, concurrency, synchronization, deadlock, memory management, segmentation, paging, replacement policies, caching, interprocess communication, file systems, and protection. Heavy emphasis on abstractions, mechanisms, policies, and design. Prerequisites: Recommended - Students should have knowledge of computer systems, probability, and computer organization.
 Class Number: 9341
 Course Info: ICSI 501 Comp Linear Algebra
@@ -300,7 +300,7 @@ Meeting Info: TTH 09:00_AM-10:20_AM Lecture Center 5 Chelmis,Charalampos
 Course Description: Review of discrete mathematics and probability used in algorithm design and analysis. Analyses of divide-and-conquer algorithms, number-theoretical algorithms, and algorithms for sorting, searching, and order statistics. Basic data structures. Basic graph algorithms for topological sorting, constructing minimum cost spanning trees, and shortest path problems. Prerequisites: C or better in Csi 521 or passing the Departmental examination in discrete mathematics.
 Class Number: 8693
 Course Info: ICSI 508 Database Systems I
-Meeting Info: TTH 10:30_AM-11:50_AM Biology 248
+Meeting Info: TTH 10:30_AM-11:50_AM Biology 248 Praphamontripong,Upsorn
 Course Description: Basic concepts of a database system, with emphasis on database schema design, data manipulation languages, and query languages. Data models. Relational databases, functional dependencies, normal forms. Relational calculus, relational algebra, SEQUEL, Query-by-Example. The CODASYL network model: data definition and data manipulation languages. Computer project using a database system. User viewpoint of concurrent access. Prerequisites: C or better in Csi 521 or passing the Departmental examination in discrete mathematics.
 Class Number: 6587
 Course Info: ICSI 509 Automata and Theory of Computn
@@ -332,7 +332,7 @@ Meeting Info: W 10:35_AM-11:30_AM Humanities 020 Chen,Mei-Hwa
 Course Description: Software engineering principles, the role of abstraction in programming, abstract data types, modularization and module interfaces, specifications, and teamwork. Concurrent programming models, synchronization and interprocess communication. Project work in contemporary concurrent and object-oriented languages. Prerequisites: Graduate CSI standing or permission of instructor.
 Class Number: 9342
 Course Info: ICSI 519 Advanced Programming Concepts
-Meeting Info: MW 11:40_AM-01:00_PM SL 206 Hono II,Daniel
+Meeting Info: MW 11:40_AM-01:00_PM SL 206 Hono_II,Daniel
 Course Description: The main focus of the course is on declarative programming and axiomatic semantics. In declarative programming we cover the Functional Programming (FP) and the Logic Programming (LP) paradigms. The emphasis in functional programming will be on programming with higher-order functions, and polymorphism as in the programing language ML. In Logic Programming we cover unification, SLD-resolution and backtracking, as in Prolog. Also covered are Floyd-Hoare axiomatic semantics, and verification of programs. Prerequisite: CSI graduate standing.
 Class Number: 5386
 Course Info: ICSI 521 Discrete Math with Application
