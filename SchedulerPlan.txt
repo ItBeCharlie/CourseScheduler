@@ -1,0 +1,26 @@
+Core Features:
+	- Frontend : React
+		- UI Design
+		- Interactive Buttons
+		- Scheduler Page with Filtering
+		- HTML/CSS
+	- Database : GoogleCloud
+		- Link Google Cloud to application
+		- Get all sample data into database properly
+		- Verify queries work
+		- Import/Export CSV
+	- Algorithm : Python
+		- Generate conflict numbers based on:
+			- Prereqs
+			- Coreqs
+			- Faculty Teaching
+				- Select Data from Courses, Prereqs, Coreqs, Teaching
+		- Use conflict numbers to schedule classes
+		- Update database with newly scheduled classes
+
+Non-Critical:
+	- Configuration
+	- Comments
+	- Login
+	- Auth Level
+	- Generate CSV from UAlbany course information download
