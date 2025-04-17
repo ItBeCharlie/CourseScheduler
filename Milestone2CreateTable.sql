@@ -1,6 +1,6 @@
 -- 1. Faculty
 CREATE TABLE Faculty (
-    fid INT,
+    fid INT AUTO_INCREMENT,
     NAME VARCHAR(100),
     auth_level VARCHAR(50),
     email VARCHAR(100) UNIQUE,
@@ -10,16 +10,16 @@ CREATE TABLE Faculty (
 
 -- 2. Course 
 CREATE TABLE Course (
-    CRN INT,
-    course_code VARCHAR(20),
+    CRN INT NOT NULL,
+    course_code VARCHAR(20) NOT NULL,
     fid INT NOT NULL,
-    NAME VARCHAR(100),
-    duration INT,
+    NAME VARCHAR(100) NOT NULL,
+    duration INT NOT NULL,
     start_time TIME,
     end_time TIME,
-    is_pinned BOOLEAN,
+    is_pinned BOOLEAN DEFAULT FALSE,
     PRIMARY KEY (CRN),
-    FOREIGN KEY (fid) REFERENCES Faculty(fid),
+    FOREIGN KEY (fid) REFERENCES Faculty(fid)
 );
 
 -- 3. Course_Days
@@ -34,8 +34,7 @@ CREATE TABLE Course_Days (
 CREATE TABLE Conflict_no (
     course_code VARCHAR(20),
     conflict_no INT,
-    PRIMARY KEY (course_code),
-    FOREIGN KEY (course_code) REFERENCES Course(course_code)
+    PRIMARY KEY (course_code, conflict_no)
 );
 
 -- 5. Coreqs
@@ -51,18 +50,16 @@ CREATE TABLE Coreqs (
 CREATE TABLE Prereqs (
     prereq_course_code VARCHAR(20),
     course_code VARCHAR(20),
-    PRIMARY KEY (prereq_course_code, course_code),
-    FOREIGN KEY (prereq_course_code) REFERENCES Course(course_code),
-    FOREIGN KEY (course_code) REFERENCES Course(course_code)
+    PRIMARY KEY (prereq_course_code, course_code)
 );
 
 -- 7. Comment
 CREATE TABLE Comment (
-    cid INT,
+    cid INT AUTO_INCREMENT,
     CRN INT,
     fid INT,
-    time_posted TIMESTAMP,
-    comment_text TEXT,
+    time_posted TIMESTAMP NOT NULL,
+    comment_text TEXT NOT NULL,
     PRIMARY KEY (cid,CRN,fid),
     FOREIGN KEY (CRN) REFERENCES Course(CRN),
     FOREIGN KEY (fid) REFERENCES Faculty(fid)
@@ -70,8 +67,8 @@ CREATE TABLE Comment (
 
 -- 8. Configuration
 CREATE TABLE Configuration (
-    config_id INT,
-    travel_time INT,
+    config_id INT AUTO_INCREMENT,
+    travel_time INT DEFAULT 0,
     PRIMARY KEY (config_id)
 );
 
@@ -88,7 +85,7 @@ CREATE TABLE Configured_by (
 CREATE TABLE Preferred_Days (
     config_id INT,
     days VARCHAR(10),
-    PRIMARY KEY (config_id),
+    PRIMARY KEY (config_id, days),
     FOREIGN KEY (config_id) REFERENCES Configuration(config_id)
 );
 
@@ -96,6 +93,23 @@ CREATE TABLE Preferred_Days (
 CREATE TABLE Preferred_Start_Times (
     config_id INT,
     times TIME,
-    PRIMARY KEY (config_id),
+    PRIMARY KEY (config_id, times),
     FOREIGN KEY (config_id) REFERENCES Configuration(config_id)
 );
+
+
+DROP TABLE Preferred_Start_Times;
+DROP TABLE Preferred_Days;
+
+DROP TABLE Configured_by;
+
+DROP TABLE Configuration;
+DROP TABLE Comment;
+DROP TABLE Prereqs;
+DROP TABLE Coreqs;
+DROP TABLE Conflict_no;
+DROP TABLE Course_Days;
+DROP TABLE Course;
+DROP TABLE Faculty;
+
+
