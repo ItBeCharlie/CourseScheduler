@@ -1,13 +1,11 @@
-"""
-Input: Array of tuples from the prereq table in the form
-[prereq_course, main_course]
-
-Output: Hashmap containing the main_course as the key,
-and the list of it's prereqs as the value.
-"""
-
-
 def generate_graph(prereq_list):
+    """
+    Input: Array of tuples from the prereq table in the form
+    [prereq_course, main_course]
+
+    Output: Hashmap containing the main_course as the key,
+    and the list of it's prereqs as the value.
+    """
     # Define output graph
     graph = {}
     for row in prereq_list:
@@ -21,14 +19,12 @@ def generate_graph(prereq_list):
     return graph
 
 
-"""
-Input: A hashmap graph of courses and their prereqs
-
-Output: A reversed order traversal where the items in the prereq list valeus are now the keys
-"""
-
-
 def reverse_graph(input_graph):
+    """
+    Input: A hashmap graph of courses and their prereqs
+
+    Output: A reversed order traversal where the items in the prereq list valeus are now the keys
+    """
     graph = {}
     for main_course, prereq_list in input_graph.items():
         # Iterate over the prereq courses as our new keys
@@ -41,19 +37,83 @@ def reverse_graph(input_graph):
     return graph
 
 
-"""
-Input: A hashmap graph of courses and their prereqs
+def find_roots(graph):
+    """
+    Input: A hashmap graph of courses
 
-Output: A debug print showing the connections
-"""
+    Output: The roots of the graph (courses with no incoming edges)
+    """
+    # Determine if incoming edge has been seen before, initialize to False
+    seen_incoming = {}
+    for node in graph:
+        seen_incoming[node] = False
+
+    # For every node, set all future nodes to having an incoming node
+    for node in graph:
+        for neighbor in graph[node]:
+            seen_incoming[neighbor] = True
+
+    roots = []
+    for node, seen in seen_incoming.items():
+        if not seen:
+            roots.append(node)
+    return roots
+
+
+def calculate_depths(graph):
+    """
+    Input: A hashmap graph of courses and their prereqs
+
+    Output: A hashmap containing a depth as the key and a list of courses at that depth as the value. A courses depth is determined by the minimum value found
+    """
+    # Keeps track of each course and the current depth of that course
+    course_depth_pairs = {}
+    # Queue used for DFS traversal
+    queue = []
+    # Roots for initializing all DFS's
+    roots = find_roots(graph)
+    for root in roots:
+        # Initialize the DFS
+        queue.append(root)
+        # Initialize root depth to 0
+        course_depth_pairs[queue[0]] = 0
+        # Continually iterate over nodes until stack is empty, then move on to next root
+        while len(queue) != 0:
+            # Store the current top of stack
+            current_node = queue[0]
+            # Ensure the node is not a leaf node
+            if current_node in graph:
+                # Iterate over all future nodes, setting the depth to minimum of parent depth + 1 and their current depth
+                for child_node in graph[current_node]:
+                    # Update depth of next item in stack
+                    if child_node not in course_depth_pairs:
+                        course_depth_pairs[child_node] = (
+                            course_depth_pairs[current_node] + 1
+                        )
+                    else:
+                        course_depth_pairs[child_node] = min(
+                            course_depth_pairs[current_node] + 1,
+                            course_depth_pairs[child_node],
+                        )
+                    # Add child to queue
+                    queue.append(child_node)
+            # Remove current_node from queue
+            queue.pop(0)
+    print(course_depth_pairs)
 
 
 def debug_print_graph(graph):
+    """
+    Input: A hashmap graph of courses and their prereqs
+
+    Output: A debug print showing the connections
+    """
     for main_course, prereq_list in graph.items():
         print(main_course, prereq_list)
 
 
 def test_graph():
+    global forward_graph, backward_graph
     test_prereq_list = [
         ("111", "222"),
         ("222", "444"),
@@ -66,11 +126,16 @@ def test_graph():
         ("666", "888"),
     ]
 
-    graph = generate_graph(test_prereq_list)
-    debug_print_graph(graph)
+    backward_graph = generate_graph(test_prereq_list)
+    debug_print_graph(backward_graph)
     print()
-    reversed_graph = reverse_graph(graph)
-    debug_print_graph(reversed_graph)
+    forward_graph = reverse_graph(backward_graph)
+    debug_print_graph(forward_graph)
+
+    # print(find_roots(forward_graph))
+
+    calculate_depths(forward_graph)
+    calculate_depths(backward_graph)
 
 
 def main():
