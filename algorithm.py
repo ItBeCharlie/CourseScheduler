@@ -6,7 +6,7 @@ class Course:
     def __init__(self, crn, course_code, is_pinned):
         self.crn = crn
         self.course_code = course_code
-        self.conflict_numbers = []
+        self.conflict_numbers = set()
         self.is_pinned = is_pinned
 
     def __repr__(self):
@@ -161,6 +161,38 @@ def get_course_map():
     return code_map, crn_map
 
 
+def group_coreqs(coreq_list):
+    """
+    Input: List of coreq tuples
+
+    Output: List of lists where all coreqs are grouped together
+    """
+    # Hashmap of current groupings
+    groupings = {}
+    # Current index for groupings
+    index = 0
+    # Intermediarry hashmap to track indexies of crns
+    group_index = {}
+    for course1, course2 in coreq_list:
+        # If both courses don't have a group already, start a new list with both of them
+        if course1 not in group_index and course2 not in group_index:
+            group_index[course1] = index
+            group_index[course2] = index
+            groupings[index] = [course1, course2]
+            index += 1
+        # If course1 is in a group but course2 isn't, add course2 to course1's group
+        elif course1 in group_index and course2 not in group_index:
+            group_index[course2] = group_index[course1]
+            groupings[group_index[course1]].append(course2)
+        # If course2 is in a group but course1 isn't, add course1 to course2's group
+        elif course2 in group_index and course1 not in group_index:
+            group_index[course1] = group_index[course2]
+            groupings[group_index[course2]].append(course1)
+
+    # Return just the lists of grouped values
+    return list(groupings.values())
+
+
 def generate_conflict_numbers():
     # Initialize conflict number counter
     current_conflict_number = 0
@@ -184,7 +216,7 @@ def generate_conflict_numbers():
             same_code_courses = code_object_map[course]
             for same_code_course_object in same_code_courses:
                 # Give the course the current conflict number
-                same_code_course_object.conflict_numbers.append(current_conflict_number)
+                same_code_course_object.conflict_numbers.add(current_conflict_number)
         # Increment the global conflict number counter
         current_conflict_number += 1
     # Iterate over forward depths and add conflict number to all courses with the same depth
@@ -194,18 +226,38 @@ def generate_conflict_numbers():
             same_code_courses = code_object_map[course]
             for same_code_course_object in same_code_courses:
                 # Give the course the current conflict number
-                same_code_course_object.conflict_numbers.append(current_conflict_number)
+                same_code_course_object.conflict_numbers.add(current_conflict_number)
         # Increment the global conflict number counter
         current_conflict_number += 1
 
-    # STEP 1 PART 3: FACULTY GROUPING
+    # STEP 1 PART 2: FACULTY GROUPING
 
+    # Load in the courses taught grouped by faculty teaching the course
     faculty_groups = load_teaches()
     # Data is preformatted for faculty, simply add entire list to same group
     for faculty, courses in faculty_groups.items():
         for course in courses:
-            crn_object_map[course].conflict_numbers.append(current_conflict_number)
+            crn_object_map[course].conflict_numbers.add(current_conflict_number)
         current_conflict_number += 1
+
+    # STEP 1 PART 3: COREQ MERGING
+
+    # Load in all coreq data
+    coreq_data = get_coreq_list()
+    # Merge CRN's into groups based on all courses that share a coreq
+    coreq_groups = group_coreqs(coreq_data)
+
+    for group in coreq_groups:
+        # Set to construct new conflict lists
+        new_conflict_list = set()
+        # Add all conflict numbers from courses in the group to the new conflict list set
+        for crn in group:
+            course_object = crn_object_map[crn]
+            new_conflict_list = new_conflict_list | course_object.conflict_numbers
+        # Update all courses in group to the new set
+        for crn in group:
+            course_object = crn_object_map[crn]
+            course_object.conflict_numbers = new_conflict_list
 
     print(crn_object_map)
 

@@ -31,6 +31,7 @@ def load_all_courses():
         ("1111", "111", False),
         ("2222", "222", False),
         ("2002", "222", False),
+        ("2112", "222", False),
         ("3003", "333", False),
         ("3333", "333", False),
         ("4444", "444", False),
@@ -56,8 +57,26 @@ def load_teaches():
         "A": ["1111", "2222"],
         "B": ["2002", "9999", "6666"],
         "C": ["3333", "5555"],
-        "D": ["4444", "7777"],
+        "D": ["4444", "7777", "2112"],
         "E": ["8888", "7007"],
         "F": ["3003"],
     }
     return test_teaches
+
+
+def get_coreq_list():
+    """
+    Input: None
+
+    Output: The result of the database query to get all of the coreq information, formatted as a list of tuples (course1, course2)
+    """
+    # TODO: get_prereq_list will perform the SQL query to get the proper list
+
+    test_coreqs = [
+        ("2222", "2002"),
+        ("2112", "2002"),
+        ("2222", "2112"),
+        ("3333", "3003"),
+        ("7777", "7007"),
+    ]
+    return test_coreqs
