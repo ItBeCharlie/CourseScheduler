@@ -1,0 +1,26 @@
+Step 1: Generate Conflict Numbers
+
+The first step to generate conflict numbers is to generate a graph of courses based on the prereq information.
+A BFS is done in both directions, and courses with the same depth will be assigned matching conflict numbers,
+to ensure that no two introductory/high level courses can be scheduled at the same time.
+
+The second step of conflict number generation is to look at all the coreq information. Any two courses that are coreqs
+of each other will share a matching conflict number to ensure a lab is never scheduled at the same time as the lecture, etc.
+
+The third step of conflict number generation is to look at that faculty information.
+Every course being taught by the same faculty member will all be given the same matching conflict number,
+to ensure that one faculty does not have to teach multiple courses at the same time.
+
+Step 2: Scheduling
+
+First all courses that are pinned are scheduled, as they must be placed at their existing locked times.
+
+Next all other courses attempt to be placed into the schedule. They start at the earliest time slot on MW,
+and check all the other courses scheduled at that time. If they share no conflict numbers with none of the courses,
+then the course is placed in that time slot. Otherwise, it will move to the first time slot in TTh. This pattern
+continues, going back to the next time slot of MW, etc, until the course is placed succesfully. Once all courses are
+placed, the database can be updated.
+
+If two pinned courses share conflict numbers, the user is notified of the conflict, but the algorithm will continue.
+If a non-pinned course cannot be placed, the user will be notified and they will have to manually set a time for the course,
+as there must be extra information our algorithm does not consider for the placement of this course.
