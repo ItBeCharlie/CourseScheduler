@@ -1,3 +1,6 @@
+from database_requests import *
+
+
 # Object to store only the critical course information
 class Course:
     def __init__(self, crn, course_code, is_pinned):
@@ -133,77 +136,36 @@ def debug_print_graph(graph):
         print(main_course, prereq_list)
 
 
-def get_prereq_list():
-    """
-    Input: None
-
-    Output: The result of the database query to get all of the prereq information, formatted as a list of tuples (prereq_course, main_course)
-    """
-    # TODO: get_prereq_list will perform the SQL query to get the proper list
-
-    test_prereq_list = [
-        ("111", "222"),
-        ("222", "444"),
-        ("333", "444"),
-        ("333", "999"),
-        ("444", "555"),
-        ("444", "666"),
-        ("555", "777"),
-        ("555", "888"),
-        ("666", "888"),
-    ]
-    return test_prereq_list
-
-
-def load_all_courses():
-    """
-    Input: None
-
-    Output: Result from query that will load all course information and store in course objects
-    """
-    # TODO: Connect this to the database, currently holding temp information
-    test_courses_list = [
-        ("1111", "111", False),
-        ("2222", "222", False),
-        ("2002", "222", False),
-        ("3003", "333", False),
-        ("3333", "333", False),
-        ("4444", "444", False),
-        ("5555", "555", False),
-        ("6666", "666", True),
-        ("7777", "777", False),
-        ("7007", "777", False),
-        ("8888", "888", True),
-        ("9999", "999", False),
-    ]
-    return test_courses_list
-
-
 def get_course_map():
     """
     Input: None
 
-    Output: Hashmap containing course codes as keys and a list of course objects who all share that course code as values
+    Output: Two Hashmaps. The first containing course codes as keys and a list of course objects who all share that course code as values.
+    The second containing crns as keys and a single course object as the values.
     """
     # Load all course tuples from database
     all_courses = load_all_courses()
-    # Output hashmap
-    output = {}
+    # Output hashmaps
+    code_map = {}
+    crn_map = {}
     for course in all_courses:
         course_object = Course(
             crn=course[0], course_code=course[1], is_pinned=course[2]
         )
-        if course_object.course_code not in output:
-            output[course_object.course_code] = []
-        output[course_object.course_code].append(course_object)
-    return output
+        # Add object to code map
+        if course_object.course_code not in code_map:
+            code_map[course_object.course_code] = []
+        code_map[course_object.course_code].append(course_object)
+        # Add object to crn map
+        crn_map[course_object.crn] = course_object
+    return code_map, crn_map
 
 
 def generate_conflict_numbers():
     # Initialize conflict number counter
     current_conflict_number = 0
     # Load in all courses and create a hashmap mapping from course_code to list of Course objects with crn's corresponding to that code
-    code_object_map = get_course_map()
+    code_object_map, crn_object_map = get_course_map()
     # Get the prereq information for generating graphs
     prereq_list = get_prereq_list()
     # Generate the graphs for both directions
@@ -212,6 +174,9 @@ def generate_conflict_numbers():
     # Get the depths for the forwards and backwards graph traversals
     backward_depths = calculate_depths(backward_graph)
     forward_depths = calculate_depths(forward_graph)
+
+    # STEP 1 PART 1: DEPTH TRAVERSAL
+
     # Iterate over backwards depths and add conflict number to all courses with the same depth
     for depth, courses in backward_depths.items():
         for course in courses:
@@ -232,7 +197,17 @@ def generate_conflict_numbers():
                 same_code_course_object.conflict_numbers.append(current_conflict_number)
         # Increment the global conflict number counter
         current_conflict_number += 1
-    print(code_object_map)
+
+    # STEP 1 PART 3: FACULTY GROUPING
+
+    faculty_groups = load_teaches()
+    # Data is preformatted for faculty, simply add entire list to same group
+    for faculty, courses in faculty_groups.items():
+        for course in courses:
+            crn_object_map[course].conflict_numbers.append(current_conflict_number)
+        current_conflict_number += 1
+
+    print(crn_object_map)
 
 
 if __name__ == "__main__":
