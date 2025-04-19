@@ -4,12 +4,13 @@ The first step to generate conflict numbers is to generate a graph of courses ba
 A BFS is done in both directions, and courses with the same depth will be assigned matching conflict numbers,
 to ensure that no two introductory/high level courses can be scheduled at the same time.
 
-The second step of conflict number generation is to look at all the coreq information. Any two courses that are coreqs
-of each other will share a matching conflict number to ensure a lab is never scheduled at the same time as the lecture, etc.
-
-The third step of conflict number generation is to look at that faculty information.
+The second step of conflict number generation is to look at that faculty information.
 Every course being taught by the same faculty member will all be given the same matching conflict number,
 to ensure that one faculty does not have to teach multiple courses at the same time.
+
+The third step of conflict number generation is to look at all the coreq information. Any two courses that are coreqs
+should share all their current conflict numbers so that they both have the same set of conflict numbers
+
 
 Step 2: Scheduling
 
