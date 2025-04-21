@@ -3,6 +3,9 @@ def get_prereq_list():
     Input: None
 
     Output: The result of the database query to get all of the prereq information, formatted as a list of tuples (prereq_course, main_course)
+
+    Data should be returned in the form of a list of tuples, with each tuple having the following data:
+    (Prereq_Course_Code, Main_Course_Code)
     """
     # TODO: get_prereq_list will perform the SQL query to get the proper list
 
@@ -25,6 +28,9 @@ def load_all_courses():
     Input: None
 
     Output: Result from query that will load all course information and store in course objects
+
+    Data should be returned in the form of a list of tuples, with each tuple having the following data:
+    (CRN, Course_Code, is_Pinned, start_time, end_time, duration)
     """
     # TODO: Connect this to the database, currently holding temp information
     test_courses_list = [
@@ -51,6 +57,8 @@ def load_teaches():
 
     Output: Result from the query that pulls all data from the teaches table, linking courses to the faculty teaching them.
     Returns a hashmap with a faculty member as the key and a list of CRN's as the value
+
+    Data should be returned in the form of a hashmap where the keys are Faculty ID's and the values are lists of the CRN's they teach
     """
     # TODO: Connect this to the database, currently holding temp information
     test_teaches = {
@@ -69,6 +77,9 @@ def get_coreq_list():
     Input: None
 
     Output: The result of the database query to get all of the coreq information, formatted as a list of tuples (course1, course2)
+
+    Data should be returned in the form of a list of tuples, with each tuple having the following data:
+    (Coreq_CRN1, Coreq_CRN2)
     """
     # TODO: get_prereq_list will perform the SQL query to get the proper list
 
