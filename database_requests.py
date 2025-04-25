@@ -1,3 +1,6 @@
+from time_conversion import *
+
+
 def get_prereq_list():
     """
     Input: None
@@ -30,23 +33,23 @@ def load_all_courses():
     Output: Result from query that will load all course information and store in course objects
 
     Data should be returned in the form of a list of tuples, with each tuple having the following data:
-    (CRN, Course_Code, is_Pinned, start_time, end_time, duration)
+    (CRN, Course_Code, is_Pinned, duration, start_time, end_time, days)
     """
     # TODO: Connect this to the database, currently holding temp information
     test_courses_list = [
-        ("1111", "111", False),
-        ("2222", "222", False),
-        ("2002", "222", False),
-        ("2112", "222", False),
-        ("3003", "333", False),
-        ("3333", "333", False),
-        ("4444", "444", False),
-        ("5555", "555", False),
-        ("6666", "666", True),
-        ("7777", "777", False),
-        ("7007", "777", False),
-        ("8888", "888", True),
-        ("9999", "999", False),
+        ("1111", "111", False, 80, None, None, None),
+        ("2222", "222", False, 80, None, None, None),
+        ("2002", "222", False, 170, None, None, None),
+        ("2112", "222", False, 80, None, None, None),
+        ("3003", "333", False, 170, None, None, None),
+        ("3333", "333", False, 80, None, None, None),
+        ("4444", "444", False, 80, None, None, None),
+        ("5555", "555", False, 80, None, None, None),
+        ("6666", "666", True, 80, "9:30", "10:50", ["M", "W"]),
+        ("7777", "777", False, 80, None, None, None),
+        ("7007", "777", False, 170, None, None, None),
+        ("8888", "888", True, 80, "8:00", "9:20", ["T", "TH"]),
+        ("9999", "999", False, 80, None, None, None),
     ]
     return test_courses_list
 
@@ -91,3 +94,30 @@ def get_coreq_list():
         ("7777", "7007"),
     ]
     return test_coreqs
+
+
+def load_possible_times():
+    """
+    Input: None
+
+    Output: Will load config information about what times and days are valid for courses
+    """
+    # TODO: Hook up to DB
+    start_time = time_str2int("8:00")
+    end_time = time_str2int("19:00")
+    increment = 90
+
+    test_days = [["M", "W"], ["T", "TH"]]
+    test_times = []
+    for time in range(start_time, end_time + 1, increment):
+        test_times.append(time)
+
+    schedule_order = []
+
+    for time in test_times:
+        for days in test_days:
+            schedule_order.append((days, time))
+
+    # print(schedule_order)
+
+    return schedule_order

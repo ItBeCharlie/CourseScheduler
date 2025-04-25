@@ -1,139 +1,44 @@
 from database_requests import *
+from time_conversion import *
+from graph import *
 
 
 # Object to store only the critical course information
 class Course:
-    def __init__(self, crn, course_code, is_pinned):
+    def __init__(
+        self,
+        crn,
+        course_code,
+        is_pinned=False,
+        duration=80,
+        start_time=None,
+        end_time=None,
+        days=[],
+    ):
         self.crn = crn
         self.course_code = course_code
         self.conflict_numbers = set()
         self.is_pinned = is_pinned
+        self.duration = duration
+        if start_time != None:
+            self.start_time = time_str2int(start_time)
+        else:
+            self.start_time = start_time
+        if end_time != None:
+            self.end_time = time_str2int(end_time)
+        else:
+            self.end_time = end_time
+        self.days = days
+
+    def schedule_course(self, days, time):
+        self.days = days
+        self.start_time = time
+        self.end_time = time + self.duration
 
     def __repr__(self):
         # return f"(CRN: {self.crn} Course_Code: {self.course_code} Pinned: {self.is_pinned})"
-        return f"{self.crn}, {self.conflict_numbers}\n"
-
-
-def generate_graph(prereq_list):
-    """
-    Input: Array of tuples from the prereq table in the form
-    [prereq_course, main_course]
-
-    Output: Hashmap containing the main_course as the key,
-    and the list of it's prereqs as the value.
-    """
-    # Define output graph
-    graph = {}
-    for row in prereq_list:
-        # Unpack the tuple
-        prereq_course, main_course = row
-        # Make sure the initial value is set for a new main course
-        if main_course not in graph:
-            graph[main_course] = []
-        # Add the prereq course into the graph
-        graph[main_course].append(prereq_course)
-    return graph
-
-
-def reverse_graph(input_graph):
-    """
-    Input: A hashmap graph of courses and their prereqs
-
-    Output: A reversed order traversal where the items in the prereq list valeus are now the keys
-    """
-    graph = {}
-    for main_course, prereq_list in input_graph.items():
-        # Iterate over the prereq courses as our new keys
-        for prereq_course in prereq_list:
-            # Set the initial value of the prereq_course list
-            if prereq_course not in graph:
-                graph[prereq_course] = []
-            # Add the main_course to the reversed list
-            graph[prereq_course].append(main_course)
-    return graph
-
-
-def find_roots(graph):
-    """
-    Input: A hashmap graph of courses
-
-    Output: The roots of the graph (courses with no incoming edges)
-    """
-    # Determine if incoming edge has been seen before, initialize to False
-    seen_incoming = {}
-    for node in graph:
-        seen_incoming[node] = False
-
-    # For every node, set all future nodes to having an incoming node
-    for node in graph:
-        for neighbor in graph[node]:
-            seen_incoming[neighbor] = True
-
-    roots = []
-    for node, seen in seen_incoming.items():
-        if not seen:
-            roots.append(node)
-    return roots
-
-
-def calculate_depths(graph):
-    """
-    Input: A hashmap graph of courses and their prereqs
-
-    Output: A hashmap containing a depth as the key and a list of courses at that depth as the value. A courses depth is determined by the minimum value found
-    """
-    # Keeps track of each course and the current depth of that course
-    course_depth_pairs = {}
-    # Queue used for DFS traversal
-    queue = []
-    # Roots for initializing all DFS's
-    roots = find_roots(graph)
-    for root in roots:
-        # Initialize the DFS
-        queue.append(root)
-        # Initialize root depth to 0
-        course_depth_pairs[queue[0]] = 0
-        # Continually iterate over nodes until stack is empty, then move on to next root
-        while len(queue) != 0:
-            # Store the current top of stack
-            current_node = queue[0]
-            # Ensure the node is not a leaf node
-            if current_node in graph:
-                # Iterate over all future nodes, setting the depth to minimum of parent depth + 1 and their current depth
-                for child_node in graph[current_node]:
-                    # Update depth of next item in stack
-                    if child_node not in course_depth_pairs:
-                        course_depth_pairs[child_node] = (
-                            course_depth_pairs[current_node] + 1
-                        )
-                    else:
-                        course_depth_pairs[child_node] = min(
-                            course_depth_pairs[current_node] + 1,
-                            course_depth_pairs[child_node],
-                        )
-                    # Add child to queue
-                    queue.append(child_node)
-            # Remove current_node from queue
-            queue.pop(0)
-
-    # Based on course_depth_pairs, group all courses of same depth in lists stored in hashmap
-    output = {}
-    for course, depth in course_depth_pairs.items():
-        # Initialize output list
-        if depth not in output:
-            output[depth] = []
-        output[depth].append(course)
-    return output
-
-
-def debug_print_graph(graph):
-    """
-    Input: A hashmap graph of courses and their prereqs
-
-    Output: A debug print showing the connections
-    """
-    for main_course, prereq_list in graph.items():
-        print(main_course, prereq_list)
+        # return f"{self.crn}, {self.conflict_numbers}\n"
+        return f"{'-'*30}\n{self.crn}   {self.days}: {time_int2str(self.start_time)} - {time_int2str(self.end_time)}\n{self.conflict_numbers}\n{'-'*30}\n"
 
 
 def get_course_map():
@@ -150,7 +55,13 @@ def get_course_map():
     crn_map = {}
     for course in all_courses:
         course_object = Course(
-            crn=course[0], course_code=course[1], is_pinned=course[2]
+            crn=course[0],
+            course_code=course[1],
+            is_pinned=course[2],
+            duration=course[3],
+            start_time=course[4],
+            end_time=course[5],
+            days=course[6],
         )
         # Add object to code map
         if course_object.course_code not in code_map:
@@ -194,6 +105,9 @@ def group_coreqs(coreq_list):
 
 
 def generate_conflict_numbers():
+    """
+    Step 1 of the algorithm, will generate all the conflict numbers to be used for scheduling. Returns list of course objects with populated conflict_numbers.
+    """
     # Initialize conflict number counter
     current_conflict_number = 0
     # Load in all courses and create a hashmap mapping from course_code to list of Course objects with crn's corresponding to that code
@@ -259,9 +173,121 @@ def generate_conflict_numbers():
             course_object = crn_object_map[crn]
             course_object.conflict_numbers = new_conflict_list
 
-    print(crn_object_map)
+    # print(list(crn_object_map.values()))
+    return list(crn_object_map.values())
+
+
+def is_conflict_overlap(course, proposed_start_time, days, travel_time=0):
+    """
+    Input: Course object, a start time to check if valid, list of days to check
+
+    Output: True if the proposed start time is invalid, which means there is a conflict. False if no conflict
+    """
+    global conflict_table
+
+    proposed_end_time = proposed_start_time + course.duration
+
+    for day in days:
+        conflict_day = conflict_table[day]
+        # Iterate over every conflict number in the course
+        for conflict_number in course.conflict_numbers:
+            # Check that conflict number is in the conflict table
+            if conflict_number not in conflict_day:
+                continue
+            # Get each time already reserved for the given conflict number on the given day
+            for time in conflict_day[conflict_number]:
+                # Logic to check for time overlap, return True if there is an overlap
+                if not (
+                    proposed_start_time - travel_time >= time[1]
+                    or time[0] >= proposed_end_time + travel_time
+                ):
+                    return True
+    # At this point, all potential conflicts have been checked and there wasn't an overlap
+    return False
+
+
+def conflict_table_update(conflict_numbers, day, time):
+    """
+    Input: A list of conflict numbers to update, a day as a string and a time tuple (start_time, end_time) to insert into the conflict table
+
+    Output: None, but the global conflict table will be updated
+    """
+    global conflict_table
+    for conflict_number in conflict_numbers:
+        if conflict_number not in conflict_table[day]:
+            conflict_table[day][conflict_number] = []
+        conflict_table[day][conflict_number].append(time)
+
+
+def schedule_courses(course_list):
+    """
+    Input: List of course objects to be scheduled
+
+    Output: Updated list of course objects with start and end times populated
+    """
+
+    # Initialize conflict table
+    """
+    Conflict table has a dictionary for each day of the week, and those internal dictionaries will have key value pairs of conflict_number to list of time tuples that are already occupied by that number
+    """
+    global conflict_table
+    conflict_table = {"M": {}, "T": {}, "W": {}, "TH": {}, "F": {}}
+
+    possible_times = load_possible_times()
+
+    # TODO: Load in travel_time from DB
+    travel_time = 15
+
+    # STEP 2 PART 1: PLACE ALL PINNED COURSES INTO SCHEDULE
+
+    for course in course_list:
+        # Filter out non-pinned courses
+        if not course.is_pinned:
+            continue
+
+        # Check for potential pinned course overlap
+        if is_conflict_overlap(course, course.start_time, course.days, travel_time):
+            print("Error: Pinned course produces overlap conflict, course scheduled")
+        # Update the conflict table
+        for day in course.days:
+            conflict_table_update(
+                course.conflict_numbers, day, (course.start_time, course.end_time)
+            )
+
+    # print(conflict_table)
+
+    # STEP 2 PART 2: PLACE ALL UNPINNED COURSES INTO SCHEDULE
+
+    for course in course_list:
+        # Filter out pinned courses
+        if course.is_pinned:
+            continue
+
+        scheduled = False
+        for days, time in possible_times:
+            # Check for course overlap at proposed time. If there is overlap, continue to next potential time
+            if is_conflict_overlap(course, time, days, travel_time):
+                continue
+
+            # At this point the course is valid to be scheduled
+            for day in days:
+                conflict_table_update(
+                    course.conflict_numbers, day, (time, time + course.duration)
+                )
+            course.schedule_course(days, time)
+            scheduled = True
+            break
+
+        if not scheduled:
+            print(f"Error scheduling {course.crn}")
+
+    # print(conflict_table)
+    # print(course_list)
+    for course in course_list:
+        print(course)
 
 
 if __name__ == "__main__":
     # main()
-    generate_conflict_numbers()
+    course_list = generate_conflict_numbers()
+    schedule_courses(course_list)
