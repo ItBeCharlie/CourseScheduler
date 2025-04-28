@@ -16,6 +16,8 @@ def time_int2str(time):
 
     Output: Time in 24H string format (08:00)
     """
+    if type(time) != int:
+        return None
     hour = time // 60
     minute = time % 60
     if minute < 10:

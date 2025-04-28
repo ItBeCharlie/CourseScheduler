@@ -12,6 +12,9 @@ class Course:
         start_time=None,
         end_time=None,
         days=[],
+        faculty=None,
+        prereqs=[],
+        coreqs=[],
     ):
         self.crn = crn
         self.course_code = course_code
@@ -27,6 +30,9 @@ class Course:
         else:
             self.end_time = end_time
         self.days = days
+        self.faculty = faculty
+        self.prereqs = prereqs
+        self.coreqs = coreqs
 
     def schedule_course(self, days, time):
         self.days = days

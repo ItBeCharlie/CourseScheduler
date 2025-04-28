@@ -60,6 +60,9 @@ def generate_conflict_numbers():
     # Iterate over backwards depths and add conflict number to all courses with the same depth
     for depth, courses in backward_depths.items():
         for course in courses:
+            # Skip courses not important to major
+            if course not in code_object_map:
+                continue
             # Get all courses with this course code from the mapping
             same_code_courses = code_object_map[course]
             for same_code_course_object in same_code_courses:
@@ -70,6 +73,9 @@ def generate_conflict_numbers():
     # Iterate over forward depths and add conflict number to all courses with the same depth
     for depth, courses in forward_depths.items():
         for course in courses:
+            # Skip courses not important to major
+            if course not in code_object_map:
+                continue
             # Get all courses with this course code from the mapping
             same_code_courses = code_object_map[course]
             for same_code_course_object in same_code_courses:
@@ -111,7 +117,9 @@ def generate_conflict_numbers():
     return list(crn_object_map.values())
 
 
-def is_conflict_overlap(course, proposed_start_time, days, travel_time=0):
+def is_conflict_overlap(
+    course, proposed_start_time, days, travel_time=0, conflict_override=0
+):
     """
     Input: Course object, a start time to check if valid, list of days to check
 
@@ -120,6 +128,7 @@ def is_conflict_overlap(course, proposed_start_time, days, travel_time=0):
     global conflict_table
 
     proposed_end_time = proposed_start_time + course.duration
+    overlap_count = 0
 
     for day in days:
         conflict_day = conflict_table[day]
@@ -130,12 +139,15 @@ def is_conflict_overlap(course, proposed_start_time, days, travel_time=0):
                 continue
             # Get each time already reserved for the given conflict number on the given day
             for time in conflict_day[conflict_number]:
-                # Logic to check for time overlap, return True if there is an overlap
+                # Logic to check for time overlap, add 1 to the conflict count
                 if not (
                     proposed_start_time - travel_time >= time[1]
                     or time[0] >= proposed_end_time + travel_time
                 ):
-                    return True
+                    overlap_count += 1
+                    # If the number of overlaps is greater than the maximum allowed, return True for conflict
+                    if overlap_count > conflict_override:
+                        return True
     # At this point, all potential conflicts have been checked and there wasn't an overlap
     return False
 
@@ -165,12 +177,16 @@ def schedule_courses(course_list):
     Conflict table has a dictionary for each day of the week, and those internal dictionaries will have key value pairs of conflict_number to list of time tuples that are already occupied by that number
     """
     global conflict_table
+    # Make a copy for debug printing
+    course_copy = []
+    for course in course_list:
+        course_copy.append(course)
     conflict_table = {"M": {}, "T": {}, "W": {}, "TH": {}, "F": {}}
 
     possible_times = load_possible_times()
 
     # TODO: Load in travel_time from DB
-    travel_time = 15
+    travel_time = 0
 
     # STEP 2 PART 1: PLACE ALL PINNED COURSES INTO SCHEDULE
 
@@ -187,37 +203,45 @@ def schedule_courses(course_list):
             conflict_table_update(
                 course.conflict_numbers, day, (course.start_time, course.end_time)
             )
+        course_list.remove(course)
 
     # print(conflict_table)
 
     # STEP 2 PART 2: PLACE ALL UNPINNED COURSES INTO SCHEDULE
 
-    for course in course_list:
-        # Filter out pinned courses
-        if course.is_pinned:
-            continue
-
-        scheduled = False
-        for days, time in possible_times:
-            # Check for course overlap at proposed time. If there is overlap, continue to next potential time
-            if is_conflict_overlap(course, time, days, travel_time):
+    # Try to schedule classes allowing more and more conflict overlap until all courses scheduled
+    overlap_allowed = 0
+    while len(course_list) != 0:
+        for course in course_list:
+            # Filter out pinned courses
+            if course.is_pinned:
                 continue
 
-            # At this point the course is valid to be scheduled
-            for day in days:
-                conflict_table_update(
-                    course.conflict_numbers, day, (time, time + course.duration)
-                )
-            course.schedule_course(days, time)
-            scheduled = True
-            break
+            scheduled = False
+            for days, time in possible_times:
+                # Check for course overlap at proposed time. If there is overlap, continue to next potential time
+                if is_conflict_overlap(
+                    course, time, days, travel_time, overlap_allowed
+                ):
+                    continue
 
-        if not scheduled:
-            print(f"Error scheduling {course.crn}")
+                # At this point the course is valid to be scheduled
+                for day in days:
+                    conflict_table_update(
+                        course.conflict_numbers, day, (time, time + course.duration)
+                    )
+                course.schedule_course(days, time)
+                scheduled = True
+                break
+
+            if not scheduled:
+                print(f"Error scheduling {course.crn}")
+            course_list.remove(course)
+        overlap_allowed += 1
 
     # print(conflict_table)
     # print(course_list)
-    for course in course_list:
+    for course in course_copy:
         print(course)
 
 
