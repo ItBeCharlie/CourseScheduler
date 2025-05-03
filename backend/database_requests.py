@@ -181,11 +181,14 @@ def get_course_relations(crn: int):
 
 
 def update_course(crn: int, patch: Dict[str, Any]):
+    print(f"[DEBUG] Updating course {crn} with patch: {patch}")
     fields, params = [], []
     mapping = {"name": "NAME", "faculty_id": "fid"}
     for k, v in patch.items():
         if k in ("days", "prereqs", "coreqs"):
             continue
+        if k == "is_pinned":
+            v = 1 if v else 0
         fields.append(f"{mapping.get(k, k)}=%s")
         params.append(v)
     params.append(crn)
@@ -195,12 +198,20 @@ def update_course(crn: int, patch: Dict[str, Any]):
             cur.execute(f"UPDATE Course SET {', '.join(fields)} WHERE CRN=%s;", params)
 
         # Days
+        # if "days" in patch:
+        #     cur.execute("DELETE FROM Course_Days WHERE CRN=%s;", (crn,))
+        #     for d in patch["days"]:
+        #         cur.execute(
+        #             "INSERT INTO Course_Days (CRN,days) VALUES (%s,%s);", (crn, d)
+        #         )
+
         if "days" in patch:
             cur.execute("DELETE FROM Course_Days WHERE CRN=%s;", (crn,))
-            for d in patch["days"]:
-                cur.execute(
-                    "INSERT INTO Course_Days (CRN,days) VALUES (%s,%s);", (crn, d)
+            days_str = ",".join(patch["days"])
+            cur.execute(
+                    "INSERT INTO Course_Days (CRN,days) VALUES (%s,%s);", (crn, days_str)
                 )
+
 
         # Prereqs
         if "prereqs" in patch:

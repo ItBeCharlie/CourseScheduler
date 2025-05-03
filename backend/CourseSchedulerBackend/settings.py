@@ -19,7 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # ------------------------------------------------------------------#
 # Secrets / sensitive config
 # ------------------------------------------------------------------#
-SECRET_KEY = config("DJANGO_SECRET_KEY")
+SECRET_KEY = 'django-insecure-&(h#!%1&#nh)8z_olbagi-eu@hz@=xhllo6$a&k0f4zz7!)8(^'
 DEBUG      = config("DJANGO_DEBUG", cast=bool, default=True)
 
 ALLOWED_HOSTS = []
@@ -36,18 +36,21 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "rest_framework",
     "scheduler",
+    'corsheaders',
 ]
 
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # ✅ must be first
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.common.CommonMiddleware',
+    'django.middleware.common.CommonMiddleware',  # ✅ only once, and after CORS
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'CourseSchedulerBackend.urls'
 
@@ -67,6 +70,13 @@ TEMPLATES = [
     },
 ]
 
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:3000",  # React dev server
+# ]
+
+CORS_ALLOW_ALL_ORIGINS = True  # 🚨 Only for testing!
+
+
 WSGI_APPLICATION = 'CourseSchedulerBackend.wsgi.application'
 
 
@@ -77,7 +87,7 @@ WSGI_APPLICATION = 'CourseSchedulerBackend.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
-        "NAME": config("MYSQL_DB", default="CourseSchedulerDB"),
+        "NAME": config("MYSQL_DB", default="course_scheduling_db"),
         "USER": config("MYSQL_USER", default="root"),
         "PASSWORD": config("MYSQL_PWD", default=""),
         "HOST": "127.0.0.1",
