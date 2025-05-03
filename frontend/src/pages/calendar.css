@@ -55,3 +55,11 @@
   font-size: 14px;
   margin-right: 4px;
 }
+
+/* Optional: Add if using a class instead of inline */
+.small-input {
+  max-width: 300px;
+  font-size: 14px;
+  padding: 6px 10px;
+}
+

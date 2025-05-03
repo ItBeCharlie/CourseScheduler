@@ -6,25 +6,34 @@ import CommentModal from './CommentModal';
 const CourseModal = ({ course, onClose, onPinToggle }) => {
   const [loading, setLoading] = useState(false);
   const [showCommentModal, setShowCommentModal] = useState(false);
-
+  const authLevel = localStorage.getItem('auth_level');
+  //alert(localStorage.getItem('auth_level'));
+  const canModify = authLevel === 'admin';
   if (!course) return null;
 
   const handlePinToggle = async () => {
     setLoading(true);
     try {
       const baseURL = process.env.REACT_APP_API_BASE_URL;
-      const newStatus = course.is_pinned === '1' ? '0' : '1';
-      await axios.put(`${baseURL}/courses/update.php`, {
-        crn: course.CRN,
+      const newStatus = course.is_pinned === '1' || course.is_pinned === 1 ? 0 : 1 ;
+      // alert("hi");
+      // Send PUT request to Django endpoint
+      await axios.post(`${baseURL}/course/${course.CRN}/update/`, {
         is_pinned: newStatus
       });
+  
+      // Update local course object and trigger parent refresh
       course.is_pinned = newStatus;
-      onPinToggle(); // refresh parent state
+      console.log(newStatus);
+      onPinToggle();
     } catch (err) {
       alert('Failed to pin/unpin course');
+      console.error(err);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
+  
 
   return (
     <>
@@ -39,14 +48,16 @@ const CourseModal = ({ course, onClose, onPinToggle }) => {
           <p><strong>Duration:</strong> {course.duration} mins</p>
 
           <div className="d-flex gap-2 mt-3">
+          
+          {canModify && (            
             <button
               className="btn btn-warning btn-sm"
               onClick={handlePinToggle}
               disabled={loading}
             >
-              {course.is_pinned === '1' ? 'Unpin' : 'Pin'} 📌
+              {course.is_pinned === '1' || course.is_pinned === 1 ? 'Unpin' : 'Pin'} 📌
             </button>
-
+            )}
             <button
               className="btn btn-info btn-sm"
               onClick={() => setShowCommentModal(true)}
