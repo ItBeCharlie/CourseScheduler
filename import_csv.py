@@ -1,52 +1,183 @@
-from Course import *
+# import_csv.py
+#
+# One‑shot CSV → MySQL seeding utility.
+#
+# Tables created earlier in phpMyAdmin:
+#   Courses(CRN PK,  Course_Code, Is_Pinned, Duration,
+#           Start_Time, End_Time, Days, Faculty)
+#   Prereqs(Main_Course_Code, Prereq_Course_Code)          PK(main, prereq)
+#   Coreqs(CRN1, CRN2)                                     PK(CRN1, CRN2)
+#   Teaching(Faculty, CRN)                                 PK(Faculty, CRN)
+
+import csv
+import sys
+from typing import List
+
+import mysql.connector
+from Course import Course
 
 
-def build_course_objects(input_csv_file):
-    """
-    Given the input_csv file, returns a list of Course objects to be used to populate the database
-    """
+# ---------------------------------------------------------------------------#
+#  Utility
+# ---------------------------------------------------------------------------#
+def _get_connection():
+    """Return a fresh MySQL connection using XAMPP defaults."""
+    return mysql.connector.connect(
+        host="127.0.0.1",
+        user="root",
+        password="",
+        database="CourseSchedulerDB",
+    )
 
-    courses = []
-    with open(input_csv_file) as f:
-        line = f.readline()
-        line = f.readline()
-        while line != "":
-            split_line = line.split(",")
-            new_course = Course(crn=split_line[0], course_code=split_line[1])
-            if split_line[5] == "FALSE":
-                new_course.is_pinned = False
-            elif split_line[5] == "TRUE":
-                new_course.is_pinned = True
-            # If multiple faculty, only store 1 of them, can't handle multiple
-            new_course.faculty = split_line[2].split(".")[0]
-            if split_line[3] != "None":
-                new_course.prereqs = split_line[3].split(".")
-            if split_line[4] != "None":
-                new_course.coreqs = split_line[4].split(".")
-            courses.append(new_course)
-            line = f.readline()
 
-    # for course in courses:
-    #     print(course)
+# ---------------------------------------------------------------------------#
+#  Phase 1 – turn CSV rows into Course objects
+# ---------------------------------------------------------------------------#
+def build_course_objects(input_csv_file: str) -> List[Course]:
+    """Parse the registrar CSV and return Course objects."""
+    courses: List[Course] = []
+
+    with open(input_csv_file, newline="") as fh:
+        reader = csv.reader(fh)
+        next(reader)  # skip header
+        for row in reader:
+            crn, code, faculty_raw, prereqs_raw, coreqs_raw, pinned = row[:6]
+
+            c = Course(crn=crn, course_code=code)
+
+            # Boolean pinned flag
+            c.is_pinned = pinned.strip().upper() == "TRUE"
+
+            # keep first faculty name if several are concatenated with '.'
+            c.faculty = faculty_raw.split(".")[0]
+
+            # lists of strings (may be empty)
+            if prereqs_raw != "None":
+                c.prereqs = prereqs_raw.split(".")
+            if coreqs_raw != "None":
+                c.coreqs = coreqs_raw.split(".")
+
+            courses.append(c)
 
     return courses
 
 
-def update_courses_table(courses):
+# ---------------------------------------------------------------------------#
+#  Phase 2 – writers for each table
+# ---------------------------------------------------------------------------#
+def update_courses_table(courses: List[Course]) -> None:
+    conn = _get_connection()
+    cur = conn.cursor()
+
+    sql = """
+        INSERT INTO Courses
+            (CRN, Course_Code, Is_Pinned, Duration,
+             Start_Time, End_Time, Days, Faculty)
+        VALUES
+            (%s, %s, %s, %s, %s, %s, %s, %s)
+        ON DUPLICATE KEY UPDATE
+            Course_Code = VALUES(Course_Code),
+            Is_Pinned   = VALUES(Is_Pinned),
+            Duration    = VALUES(Duration),
+            Start_Time  = VALUES(Start_Time),
+            End_Time    = VALUES(End_Time),
+            Days        = VALUES(Days),
+            Faculty     = VALUES(Faculty);
     """
-    Given a list of course objects, extract the information to perform update queries to DB
+
+    for c in courses:
+        cur.execute(
+            sql,
+            (
+                c.crn,
+                c.course_code,
+                c.is_pinned,
+                c.duration,
+                c.start_time,
+                c.end_time,
+                "".join(c.days) if c.days else None,
+                c.faculty,
+            ),
+        )
+
+    conn.commit()
+    cur.close()
+    conn.close()
+
+
+def update_prereqs_table(courses: List[Course]) -> None:
+    conn = _get_connection()
+    cur = conn.cursor()
+
+    sql = """
+        INSERT IGNORE INTO Prereqs
+            (Main_Course_Code, Prereq_Course_Code)
+        VALUES (%s, %s);
     """
-    for course in courses:
-        pass
+
+    for c in courses:
+        for prereq in c.prereqs:
+            cur.execute(sql, (c.course_code, prereq))
+
+    conn.commit()
+    cur.close()
+    conn.close()
 
 
-def update_faculty_table(courses):
-    pass
+def update_coreqs_table(courses: List[Course]) -> None:
+    conn = _get_connection()
+    cur = conn.cursor()
+
+    sql = """
+        INSERT IGNORE INTO Coreqs
+            (CRN1, CRN2)
+        VALUES (%s, %s);
+    """
+
+    for c in courses:
+        for coreq_crn in c.coreqs:
+            # store only one direction; PK prevents duplicates
+            cur.execute(sql, (c.crn, coreq_crn))
+
+    conn.commit()
+    cur.close()
+    conn.close()
 
 
-def update_teaches_table(courses):
-    pass
+def update_teaches_table(courses: List[Course]) -> None:
+    conn = _get_connection()
+    cur = conn.cursor()
+
+    sql = """
+        INSERT IGNORE INTO Teaching
+            (Faculty, CRN)
+        VALUES (%s, %s);
+    """
+
+    for c in courses:
+        cur.execute(sql, (c.faculty, c.crn))
+
+    conn.commit()
+    cur.close()
+    conn.close()
+
+
+# ---------------------------------------------------------------------------#
+#  CLI entry‑point
+# ---------------------------------------------------------------------------#
+def main(csv_path: str) -> None:
+    courses = build_course_objects(csv_path)
+
+    update_courses_table(courses)
+    update_prereqs_table(courses)
+    update_coreqs_table(courses)
+    update_teaches_table(courses)
+
+    print("Database seeded from", csv_path)
 
 
 if __name__ == "__main__":
-    courses = build_course_objects("graduate_icsi_spring_2025_in_person_classes.csv")
+    if len(sys.argv) != 2:
+        print("Usage:  python import_csv.py <csv_path>")
+        sys.exit(1)
+    main(sys.argv[1])
