@@ -16,16 +16,11 @@ def _get_connection():
 #  0.  Build Course objects from registrar CSV
 # ---------------------------------------------------------------------------#
 
-
-def build_course_objects(
-    csv_path: str,
-) -> List[Course]:  # I will update this method later as per the CSV dataset #
-
-    def _safe_int(val, default=0):
-        try:
-            return int(float(str(val).strip()))
-        except (ValueError, TypeError):
-            return default
+def build_course_objects(csv_path: str) -> List[Course]:
+    # 1. Build a faculty‑name ➜ fid map once
+    with _get_connection().cursor() as cur:
+        cur.execute("SELECT fid, NAME FROM Faculty;")
+        fid_map = {name: fid for fid, name in cur.fetchall()}
 
     courses: List[Course] = []
 
@@ -34,28 +29,28 @@ def build_course_objects(
         next(rdr)  # skip header row
 
         for row in rdr:
-            print(row)
-            crn = _safe_int(row[0])
-            code = row[1].strip()
-            faculty = row[3].strip()
+            crn          = int(row[0].strip())
+            code         = row[1].strip()
+            faculty_name = row[2].strip()
 
-            duration = _safe_int(row[4])
-            start_time = row[7].strip() or None
-            end_time = row[8].strip() or None
-            is_pinned = 1 if row[6].strip().lower() in {"yes", "y", "1", "true"} else 0
+            # Look up fid; default to None (upsert_courses will insert Faculty if missing)
+            fid = fid_map.get(faculty_name)
 
-            c = Course(crn=crn, course_code=code)  # Course expects both args
-            c.faculty_name = faculty
-            c.duration = duration
-            c.start_time = start_time
-            c.end_time = end_time
-            c.days = []
-            c.is_pinned = bool(is_pinned)
+            is_pinned = "FALSE"
+
+            c = Course(crn=crn, course_code=code)
+            c.fid          = fid                 # may be None
+            c.faculty_name = faculty_name        # needed by upsert_courses
+            c.NAME         = faculty_name        # display name, matches schema
+            c.duration     = 80                  # default
+            c.start_time   = None
+            c.end_time     = None
+            c.days         = []                  # ignored for now
+            c.is_pinned    = is_pinned
 
             courses.append(c)
 
     return courses
-
 
 # ---------------------------------------------------------------------------#
 #  1. Faculty
