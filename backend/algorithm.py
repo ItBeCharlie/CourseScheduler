@@ -280,8 +280,8 @@ def update_db(courses):
         # UNCOMMENT ME FOR BUG
         patch = {
             "days": course.days,
-            "start_time": course.start_time,
-            "end_time": course.end_time,
+            "start_time": time_int2str(course.start_time),
+            "end_time": time_int2str(course.end_time),
         }
         update_course(course.crn, patch)
 

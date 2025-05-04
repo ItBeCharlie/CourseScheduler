@@ -238,7 +238,7 @@ def update_course(crn: int, patch: Dict[str, Any]):
         params.append(v)
     params.append(crn)
 
-    print(fields, params)
+    # print(fields, params)
 
     with _get_connection().cursor() as cur:
         if fields:
