@@ -2,6 +2,7 @@ from database_requests import *
 from time_conversion import *
 from graph import *
 from Course import *
+from import_csv import *
 
 
 def group_coreqs(coreq_list):
@@ -46,9 +47,9 @@ def group_faculty(courses):
     groupings = {}
 
     for crn, course in courses.items():
-        if course.faculty not in groupings:
-            groupings[course.faculty] = []
-        groupings[course.faculty].append(course)
+        if course.fid not in groupings:
+            groupings[course.fid] = []
+        groupings[course.fid].append(course)
 
     # Return just the lists of grouped values
     return list(groupings.values())
@@ -267,7 +268,18 @@ def schedule_courses(course_list):
     # for course in course_copy:
     #     output_log += str(course)
 
+    update_db(course_copy)
+    # upsert_courses(course_copy)
+
     return output_log, course_copy
+
+
+def update_db(courses):
+    for course in courses:
+        patch = {}
+        # UNCOMMENT ME FOR BUG
+        # patch = {"days": course.days}
+        update_course(course, patch)
 
 
 def generate_schedule():

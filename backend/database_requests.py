@@ -475,10 +475,10 @@ def upload_dummy_data():
     #             ),
     #         )
 
-    with _get_connection().cursor() as cur:
-        for prereq in test_coreqs:
-            cur.execute(
-                """
-                UPDATE Course SET NAME=CRN
-                """,
-            )
+    # with _get_connection().cursor() as cur:
+    #     for prereq in test_coreqs:
+    #         cur.execute(
+    #             """
+    #             UPDATE Course SET NAME=CRN
+    #             """,
+    #         )

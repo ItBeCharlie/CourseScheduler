@@ -16,6 +16,7 @@ def _get_connection():
 #  0.  Build Course objects from registrar CSV
 # ---------------------------------------------------------------------------#
 
+
 def build_course_objects(csv_path: str) -> List[Course]:
     # 1. Build a faculty‑name ➜ fid map once
     with _get_connection().cursor() as cur:
@@ -29,8 +30,8 @@ def build_course_objects(csv_path: str) -> List[Course]:
         next(rdr)  # skip header row
 
         for row in rdr:
-            crn          = int(row[0].strip())
-            code         = row[1].strip()
+            crn = int(row[0].strip())
+            code = row[1].strip()
             faculty_name = row[2].strip()
 
             # Look up fid; default to None (upsert_courses will insert Faculty if missing)
@@ -39,18 +40,19 @@ def build_course_objects(csv_path: str) -> List[Course]:
             is_pinned = "FALSE"
 
             c = Course(crn=crn, course_code=code)
-            c.fid          = fid                 # may be None
-            c.faculty_name = faculty_name        # needed by upsert_courses
-            c.NAME         = faculty_name        # display name, matches schema
-            c.duration     = 80                  # default
-            c.start_time   = None
-            c.end_time     = None
-            c.days         = []                  # ignored for now
-            c.is_pinned    = is_pinned
+            c.fid = fid  # may be None
+            c.faculty_name = faculty_name  # needed by upsert_courses
+            c.NAME = faculty_name  # display name, matches schema
+            c.duration = 80  # default
+            c.start_time = None
+            c.end_time = None
+            c.days = []  # ignored for now
+            c.is_pinned = is_pinned
 
             courses.append(c)
 
     return courses
+
 
 # ---------------------------------------------------------------------------#
 #  1. Faculty
@@ -108,6 +110,14 @@ def upsert_courses(course_objs: List[Course]):
         )
     cur.execute("SELECT fid, NAME FROM Faculty;")
     fid_map = {name: fid for fid, name in cur.fetchall()}
+
+    # Check if course exists, if so, update it. Otherwise, insert it
+    # for c in course_objs:
+    #     sql = """
+    #     SELECT CRN FROM Course WHERE CRN=%s;
+    #     """
+    #     data = c.crn
+    #     cur.execute(sql, data)
 
     sql = """
         INSERT INTO Course

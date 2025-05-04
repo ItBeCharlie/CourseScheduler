@@ -12,9 +12,10 @@ class Course:
         start_time=None,
         end_time=None,
         days=[],
-        faculty=None,
+        fid=None,
         prereqs=[],
         coreqs=[],
+        faculty_name="",
     ):
         self.crn = crn
         self.course_code = course_code
@@ -35,9 +36,10 @@ class Course:
             self.days = days.split(",")
         else:
             self.days = days
-        self.faculty = faculty
+        self.fid = fid
         self.prereqs = prereqs
         self.coreqs = coreqs
+        self.faculty_name = faculty_name
 
     def schedule_course(self, days, time):
         self.days = days
@@ -71,7 +73,7 @@ def get_course_map(all_courses):
             start_time=course["start_time"],
             end_time=course["end_time"],
             days=course["days"],
-            faculty=course["faculty_id"],
+            fid=course["faculty_id"],
         )
         # Add object to code map
         if course_object.course_code not in code_map:
