@@ -11,6 +11,7 @@ from django.core.files.storage import default_storage
 from import_csv import *
 from django.db import connection
 from time_conversion import time_int2str
+import random
 import json
 
 from database_requests import (
@@ -50,7 +51,7 @@ def upload_csv_view(request):
     return JsonResponse({"success": False, "message": "No file uploaded."}, status=400)
 
 
-import random
+
 
 
 @csrf_exempt
