@@ -33,6 +33,7 @@ def build_course_objects(csv_path: str) -> List[Course]:
             crn = int(row[0].strip())
             code = row[1].strip()
             faculty_name = row[2].split(".")[0].strip()
+            duration = int(row[9])
 
             # Look up fid; default to None (upsert_courses will insert Faculty if missing)
             fid = fid_map.get(faculty_name)
@@ -43,7 +44,7 @@ def build_course_objects(csv_path: str) -> List[Course]:
             c.fid = fid  # may be None
             c.faculty_name = faculty_name  # needed by upsert_courses
             c.NAME = faculty_name  # display name, matches schema
-            c.duration = 80  # default
+            c.duration = duration  # default
             c.start_time = None
             c.end_time = None
             c.days = []  # ignored for now
