@@ -50,10 +50,23 @@ def upload_csv_view(request):
     return JsonResponse({"success": False, "message": "No file uploaded."}, status=400)
 
 
+import random
+
+
 @csrf_exempt
 def run_scheduler(request):
     if request.method == "POST":
         try:
+            body = json.loads(request.body)
+            seed = body.get("seed")
+
+            # If no seed is provided, generate one
+            if not seed:
+                seed = str(random.randint(100000, 999999))
+
+            random.seed(seed)
+
+            # Your scheduler logic here
             course_list = generate_conflict_numbers()
             output_log, course_list = schedule_courses(course_list)
 
@@ -68,12 +81,18 @@ def run_scheduler(request):
                 for c in course_list
             ]
 
-            # print(course_list)
+            return JsonResponse({
+                "success": True,
+                "courses": result,
+                "log": output_log,
+                "seed": seed  # <-- THIS MUST BE PRESENT
+            })
 
-            return JsonResponse({"success": True, "courses": result, "log": output_log})
         except Exception as e:
             return JsonResponse({"success": False, "error": str(e)})
+
     return JsonResponse({"success": False, "error": "Only POST allowed"})
+
 
 
 # ------------------- FACULTY LOGIN -------------------
