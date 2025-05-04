@@ -6,15 +6,13 @@ const RunSchedulerPage = () => {
   const [courses, setCourses] = useState([]);
   const [message, setMessage] = useState('');
   const [seed, setSeed] = useState('');
-  const currentFid = localStorage.getItem('fid');
   const baseURL = process.env.REACT_APP_API_BASE_URL;
 
   const runScheduler = async () => {
     setMessage("Running scheduler...");
     try {
       const res = await axios.post(`${baseURL}/run-scheduler/`, {
-        seed: seed.trim() === '' ? null : seed.trim(),
-        fid: currentFid
+        seed: seed.trim() === '' ? null : seed.trim()
       });
       if (res.data.success) {
         setCourses(res.data.courses);
