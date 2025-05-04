@@ -36,6 +36,24 @@ def group_coreqs(coreq_list):
     return list(groupings.values())
 
 
+def group_faculty(courses):
+    """
+    Input: List of courses
+
+    Output: List of lists where each list contains courses with the same faculty
+    """
+    # Hashmap of current groupings
+    groupings = {}
+
+    for crn, course in courses.items():
+        if course.faculty not in groupings:
+            groupings[course.faculty] = []
+        groupings[course.faculty].append(course)
+
+    # Return just the lists of grouped values
+    return list(groupings.values())
+
+
 def generate_conflict_numbers():
     """
     Step 1 of the algorithm, will generate all the conflict numbers to be used for scheduling. Returns list of course objects with populated conflict_numbers.
@@ -47,7 +65,7 @@ def generate_conflict_numbers():
     all_courses = list_courses()
     code_object_map, crn_object_map = get_course_map(all_courses)
     # Get the prereq information for generating graphs
-    prereq_list, coreq_list = get_configuration()
+    prereq_list = get_prereq_table()
     # Generate the graphs for both directions
     backward_graph = generate_graph(prereq_list)
     forward_graph = reverse_graph(backward_graph)
@@ -87,19 +105,19 @@ def generate_conflict_numbers():
     # STEP 1 PART 2: FACULTY GROUPING
 
     # Load in the courses taught grouped by faculty teaching the course
-    faculty_groups = load_teaches()
+    faculty_groups = group_faculty(crn_object_map)
     # Data is preformatted for faculty, simply add entire list to same group
-    for faculty, courses in faculty_groups.items():
-        for course in courses:
-            crn_object_map[course].conflict_numbers.add(current_conflict_number)
+    for group in faculty_groups:
+        for course in group:
+            course.conflict_numbers.add(current_conflict_number)
         current_conflict_number += 1
 
     # STEP 1 PART 3: COREQ MERGING
 
     # Load in all coreq data
-    coreq_data = get_coreq_list()
+    coreq_list = get_coreq_table()
     # Merge CRN's into groups based on all courses that share a coreq
-    coreq_groups = group_coreqs(coreq_data)
+    coreq_groups = group_coreqs(coreq_list)
 
     for group in coreq_groups:
         # Set to construct new conflict lists
@@ -254,6 +272,8 @@ def generate_schedule():
 
 if __name__ == "__main__":
     # main()
-    # generate_schedule()
-    courses = list_courses()
-    print(get_course_map(courses))
+    generate_schedule()
+    # courses = list_courses()
+    # crn_map, _ = get_course_map(courses)
+    # # upload_dummy_data()
+    # print(group_faculty(crn_map))

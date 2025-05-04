@@ -25,11 +25,16 @@ class Course:
             self.start_time = time_str2int(start_time)
         else:
             self.start_time = start_time
+
         if end_time != None and type(end_time) == str:
             self.end_time = time_str2int(end_time)
         else:
             self.end_time = end_time
-        self.days = days
+
+        if days != None:
+            self.days = days.split(",")
+        else:
+            self.days = days
         self.faculty = faculty
         self.prereqs = prereqs
         self.coreqs = coreqs
@@ -40,9 +45,10 @@ class Course:
         self.end_time = time + self.duration
 
     def __repr__(self):
-        return f"(CRN: {self.crn} Course_Code: {self.course_code} Pinned: {self.is_pinned}\n)"
+        # return f"(CRN: {self.crn} Course_Code: {self.course_code} Pinned: {self.is_pinned}\n)"
         # return f"{self.crn}, {self.conflict_numbers}\n"
-        # return f"{'-'*30}\n{self.crn}   {self.days}: {time_int2str(self.start_time)} - {time_int2str(self.end_time)}\n{self.conflict_numbers}\n{'-'*30}\n"
+        return f"{'-'*30}\n{self.crn}   {self.days}: {time_int2str(self.start_time)} - {time_int2str(self.end_time)}\n{self.conflict_numbers}\n{'-'*30}\n"
+        # return f"{self.crn}"
 
 
 def get_course_map(all_courses):
@@ -65,6 +71,7 @@ def get_course_map(all_courses):
             start_time=course["start_time"],
             end_time=course["end_time"],
             days=course["days"],
+            faculty=course["faculty_id"],
         )
         # Add object to code map
         if course_object.course_code not in code_map:
