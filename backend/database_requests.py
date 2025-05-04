@@ -180,6 +180,18 @@ def get_course_relations(crn: int):
     return out
 
 
+def get_prereq_table():
+    with _get_connection().cursor() as cur:
+        cur.execute(
+            """
+            SELECT *
+            FROM Prereqs
+            """,
+        )
+        out = [x[0] for x in cur.fetchall()]
+    return out
+
+
 def update_course(crn: int, patch: Dict[str, Any]):
     print(f"[DEBUG] Updating course {crn} with patch: {patch}")
     fields, params = [], []
@@ -209,9 +221,8 @@ def update_course(crn: int, patch: Dict[str, Any]):
             cur.execute("DELETE FROM Course_Days WHERE CRN=%s;", (crn,))
             days_str = ",".join(patch["days"])
             cur.execute(
-                    "INSERT INTO Course_Days (CRN,days) VALUES (%s,%s);", (crn, days_str)
-                )
-
+                "INSERT INTO Course_Days (CRN,days) VALUES (%s,%s);", (crn, days_str)
+            )
 
         # Prereqs
         if "prereqs" in patch:
@@ -219,9 +230,7 @@ def update_course(crn: int, patch: Dict[str, Any]):
                 "SELECT course_code FROM Course WHERE CRN=%s;",
                 (crn,),
             )
-            code = (
-                patch.get("course_code") or cur.fetchone()[0]
-            )  
+            code = patch.get("course_code") or cur.fetchone()[0]
             cur.execute("DELETE FROM Prereqs WHERE course_code=%s;", (code,))
             for p in patch["prereqs"]:
                 cur.execute(
@@ -322,10 +331,7 @@ def load_possible_times():
         if exists:
             cur.execute("SELECT DayPattern, Start_Time FROM PossibleTimes;")
             rows = cur.fetchall()
-            return [
-                (r[0].split("."), time_str2int(str(r[1])))
-                for r in rows
-            ]
+            return [(r[0].split("."), time_str2int(str(r[1]))) for r in rows]
 
     start, end, inc = time_str2int("8:00"), time_str2int("19:00"), 90
     patterns = [["M", "W"], ["T", "TH"]]

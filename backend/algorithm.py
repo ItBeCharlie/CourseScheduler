@@ -44,10 +44,10 @@ def generate_conflict_numbers():
     current_conflict_number = 0
     # Load in all courses and create a hashmap mapping from course_code to list of Course objects with crn's corresponding to that code
     # Load all course tuples from database
-    all_courses = load_all_courses()
+    all_courses = list_courses()
     code_object_map, crn_object_map = get_course_map(all_courses)
     # Get the prereq information for generating graphs
-    prereq_list = get_prereq_list()
+    prereq_list, coreq_list = get_configuration()
     # Generate the graphs for both directions
     backward_graph = generate_graph(prereq_list)
     forward_graph = reverse_graph(backward_graph)
@@ -241,11 +241,19 @@ def schedule_courses(course_list):
 
     # print(conflict_table)
     # print(course_list)
+
+    # output will be
     for course in course_copy:
         print(course)
 
 
-if __name__ == "__main__":
-    # main()
+def generate_schedule():
     course_list = generate_conflict_numbers()
     schedule_courses(course_list)
+
+
+if __name__ == "__main__":
+    # main()
+    # generate_schedule()
+    courses = list_courses()
+    print(get_course_map(courses))
