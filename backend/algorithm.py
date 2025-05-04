@@ -184,7 +184,7 @@ def conflict_table_update(conflict_numbers, day, time):
         conflict_table[day][conflict_number].append(time)
 
 
-def schedule_courses(course_list):
+def schedule_courses(course_list, seed):
     """
     Input: List of course objects to be scheduled
 
