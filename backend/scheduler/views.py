@@ -1,10 +1,14 @@
 from django.shortcuts import render
 
 # Create your views here.
+import os
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.hashers import check_password
 from django.contrib.auth.hashers import make_password
+from algorithm import generate_conflict_numbers, schedule_courses
+from django.core.files.storage import default_storage
+from import_csv import *
 from django.db import connection
 import json
 
@@ -15,6 +19,46 @@ from database_requests import (
     get_course_relations, get_configuration, save_configuration,
     load_possible_times
 )
+
+
+
+@csrf_exempt
+def upload_csv_view(request):
+    if request.method == 'POST' and request.FILES.get('csvFile'):
+        file = request.FILES['csvFile']
+        path = default_storage.save(f'temp/{file.name}', file)
+        csv_path = os.path.join(default_storage.location, path)
+
+        try:
+            main(csv_path)  # ✅ Reuse existing logic
+            return JsonResponse({"success": True, "message": "CSV uploaded and processed."})
+        except Exception as e:
+            return JsonResponse({"success": False, "message": str(e)}, status=500)
+
+    return JsonResponse({"success": False, "message": "No file uploaded."}, status=400)
+
+
+
+@csrf_exempt
+def run_scheduler(request):
+    if request.method == 'POST':
+        try:
+            course_list = generate_conflict_numbers()
+            schedule_courses(course_list)
+
+            result = [{
+                'crn': c.crn,
+                'code': c.course_code,
+                'days': c.days,
+                'start_time': c.start_time,
+                'end_time': c.end_time
+            } for c in course_list]
+
+            return JsonResponse({'success': True, 'courses': result})
+        except Exception as e:
+            return JsonResponse({'success': False, 'error': str(e)})
+    return JsonResponse({'success': False, 'error': 'Only POST allowed'})
+
 
 
 # ------------------- FACULTY LOGIN -------------------
@@ -73,9 +117,82 @@ def signup_view(request):
             )
 
         return JsonResponse({'message': 'Signup successful'})
+    
+# ------------------- CHANGE PASSOWRD -------------------
+
+
+@csrf_exempt
+def change_password(request):
+    if request.method != 'POST':
+        return JsonResponse({'success': False, 'message': 'POST required'}, status=405)
+
+    data = json.loads(request.body)
+    user_id = data.get('user_id')
+    old_password = data.get('old_password')
+    new_password = data.get('new_password')
+
+    if not user_id or not old_password or not new_password:
+        return JsonResponse({'success': False, 'message': 'Missing fields'}, status=400)
+
+    try:
+        with connection.cursor() as cursor:
+            # Fetch current hashed password
+            cursor.execute("SELECT PASSWORD FROM Faculty WHERE fid = %s", [user_id])
+            row = cursor.fetchone()
+            if not row:
+                return JsonResponse({'success': False, 'message': 'Faculty not found'}, status=404)
+
+            current_hashed = row[0]
+            if not check_password(old_password, current_hashed):
+                return JsonResponse({'success': False, 'message': 'Old password is incorrect'}, status=401)
+
+            # Hash new password
+            new_hashed = make_password(new_password)
+
+            # Update password
+            cursor.execute("UPDATE Faculty SET PASSWORD = %s WHERE fid = %s", [new_hashed, user_id])
+
+        return JsonResponse({'success': True, 'message': 'Password updated successfully'})
+    
+    except Exception as e:
+        return JsonResponse({'success': False, 'message': f'Error: {str(e)}'}, status=500)
 
 
 # ------------------- FACULTY -------------------
+
+@csrf_exempt
+def total_counts(request):
+    with connection.cursor() as cursor:
+        cursor.execute("SELECT COUNT(*) FROM Faculty")
+        faculty_count = cursor.fetchone()[0]
+        cursor.execute("SELECT COUNT(*) FROM Course")
+        course_count = cursor.fetchone()[0]
+
+    return JsonResponse({
+        "faculty_count": faculty_count,
+        "course_count": course_count,
+    })
+
+def faculty_list_view(request):
+    return JsonResponse(list_faculty(), safe=False)
+
+@csrf_exempt
+def courses_by_faculty(request, fid):
+
+    with connection.cursor() as cursor:
+        cursor.execute("""
+            SELECT count(*) as numberofcourses
+            FROM Course
+            WHERE fid = %s
+        """, (fid,))
+        course_count = cursor.fetchone()[0]
+        print(course_count);
+       
+
+    return JsonResponse({
+        "course_count": course_count,
+    })
+    
 
 def faculty_list_view(request):
     return JsonResponse(list_faculty(), safe=False)
@@ -261,7 +378,7 @@ def comment_delete_view(request, cid):
     if request.method != "POST":
         return JsonResponse({"error": "POST required"}, status=405)
     data = json.loads(request.body)
-    print("[DEBUG] delete request body:", data)
+    # print("[DEBUG] delete request body:", data)
     status = delete_comment(cid, data["fid"])
     return JsonResponse({"status": status})
 
@@ -295,6 +412,33 @@ def course_delete_view(request, crn):
 @csrf_exempt
 def course_relation_view(request, crn):
     return JsonResponse(get_course_relations(crn))
+
+
+
+
+@csrf_exempt
+def get_courses_by_crns(request):
+    if request.method != "POST":
+        return JsonResponse({"error": "POST method required"}, status=405)
+
+    try:
+        data = json.loads(request.body)
+        crns = data.get("crns", [])
+        if not isinstance(crns, list) or not crns:
+            return JsonResponse({"error": "Invalid or empty CRNs list"}, status=400)
+
+        placeholders = ','.join(['%s'] * len(crns))
+        with connection.cursor() as cur:
+            cur.execute(
+                f"SELECT CRN, course_code, NAME AS course_name FROM Course WHERE CRN IN ({placeholders})",
+                crns
+            )
+            rows = [dict(zip([col[0] for col in cur.description], row)) for row in cur.fetchall()]
+        return JsonResponse(rows, safe=False)
+    except Exception as e:
+        return JsonResponse({"error": str(e)}, status=500)
+
+
 
 # ------------------- CONFIGURATION -------------------
 @csrf_exempt

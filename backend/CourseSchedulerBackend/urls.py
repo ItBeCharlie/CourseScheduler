@@ -12,6 +12,13 @@ urlpatterns = [
     path('api/test-cors/', cors_test_view),
     path('api/login/', views.login_view),
     path('api/signup/', views.signup_view),
+    path('api/change_password/', views.change_password, name='change_password'),
+    path('api/run-scheduler/', views.run_scheduler),
+    path('api/admin/total_counts/', views.total_counts),
+    path('api/faculty/<int:fid>/courses/', views.courses_by_faculty),
+    path('api/upload_csv/', views.upload_csv_view),
+
+
 
     # ---------- Faculty ----------
     path('api/faculty/', views.faculty_list_view),
@@ -34,6 +41,8 @@ urlpatterns = [
     path('api/course/<int:crn>/update/', views.course_update_view),
     path('api/course/<int:crn>/delete/', views.course_delete_view),
     path('api/course/<int:crn>/relations/', views.course_relation_view),
+    path('api/courses/by-crns/', views.get_courses_by_crns),
+
 
     # ---------- Configuration ----------
     path('api/config/<int:fid>/', views.configuration_view),
