@@ -34,6 +34,8 @@ def build_course_objects(csv_path: str) -> List[Course]:
             code = row[1].strip()
             faculty_name = row[2].split(".")[0].strip()
             duration = int(row[9])
+            prereqs = row[3].split(".") if row[3] != "None" else []
+            coreqs = row[4].split(".") if row[4] != "None" else []
 
             # Look up fid; default to None (upsert_courses will insert Faculty if missing)
             fid = fid_map.get(faculty_name)
@@ -49,8 +51,11 @@ def build_course_objects(csv_path: str) -> List[Course]:
             c.end_time = None
             c.days = []  # ignored for now
             c.is_pinned = is_pinned
+            c.prereqs = prereqs
+            c.coreqs = coreqs
 
             courses.append(c)
+    # print(courses)
 
     return courses
 
@@ -181,20 +186,43 @@ def upsert_conflict_no(rows: List[tuple]):
 #  5. Coreqs   (list[(CRN1, CRN2)])
 # ---------------------------------------------------------------------------#
 def upsert_coreqs(rows: List[tuple]):
-    if rows:
-        conn = _get_connection()
-        cur = conn.cursor()
+    if not rows:
+        return
+
+    conn = _get_connection()
+    cur = conn.cursor()
+
+    # Try to fetch all valid CRNs from the Courses table
+    cur.execute("SELECT CRN FROM Course")
+    valid_crns = set(row[0] for row in cur.fetchall())
+    # print(f"Valid CRNs from Courses: {valid_crns}")
+
+    # Filter out rows where either CRN is not in the valid list
+    filtered_rows = [
+        (course_crn, coreq_crn)
+        for (course_crn, coreq_crn) in rows
+        if course_crn in valid_crns and coreq_crn in valid_crns
+    ]
+
+    # print(f"Filtered COREQS: {filtered_rows}")
+
+    if filtered_rows:
         cur.execute("TRUNCATE Coreqs;")
-        cur.executemany("INSERT INTO Coreqs (CRN1,CRN2) VALUES (%s,%s);", rows)
+        cur.executemany(
+            "INSERT INTO Coreqs (CRN1, CRN2) VALUES (%s, %s);",
+            filtered_rows,
+        )
         conn.commit()
-        cur.close()
-        conn.close()
+
+    cur.close()
+    conn.close()
 
 
 # ---------------------------------------------------------------------------#
 #  6. Prereqs   (list[(prereq_course_code, course_code)])
 # ---------------------------------------------------------------------------#
 def upsert_prereqs(rows: List[tuple]):
+    rows = list(set(rows))
     if rows:
         conn = _get_connection()
         cur = conn.cursor()
@@ -293,7 +321,24 @@ def main(
     courses = build_course_objects(csv_path)
     upsert_courses(courses)
 
+    prereqs = []
+    for course in courses:
+        # print(course)
+        if course.prereqs == []:
+            continue
+        for prereq_course in course.prereqs:
+            prereqs.append((prereq_course, course.course_code))
+
     upsert_prereqs(prereqs or [])
+
+    coreqs = []
+    for course in courses:
+        # print(course)
+        if course.coreqs == []:
+            continue
+        for coreq_course in course.coreqs:
+            coreqs.append((course.crn, int(coreq_course)))
+
     upsert_coreqs(coreqs or [])
     upsert_conflict_no(conflict_rows or [])
     upsert_comments(comment_seed or [])
