@@ -185,7 +185,7 @@ def conflict_table_update(conflict_numbers, day, time):
         conflict_table[day][conflict_number].append(time)
 
 
-def schedule_courses(course_list, seed):
+def schedule_courses(course_list, seed, admin_fid):
     """
     Input: List of course objects to be scheduled
 
@@ -299,7 +299,9 @@ def generate_schedule():
 
 if __name__ == "__main__":
     # main()
-    generate_schedule()
+    # generate_schedule()
+    times = get_configuration(1)
+    print(times)
     # courses = list_courses()
     # crn_map, _ = get_course_map(courses)
     # # upload_dummy_data()
