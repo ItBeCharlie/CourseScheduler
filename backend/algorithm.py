@@ -201,6 +201,8 @@ def schedule_courses(course_list):
         course_copy.append(course)
     conflict_table = {"M": {}, "T": {}, "W": {}, "TH": {}, "F": {}}
 
+    output_log = ""
+
     possible_times = load_possible_times()
 
     # TODO: Load in travel_time from DB
@@ -215,7 +217,9 @@ def schedule_courses(course_list):
 
         # Check for potential pinned course overlap
         if is_conflict_overlap(course, course.start_time, course.days, travel_time):
-            print("Error: Pinned course produces overlap conflict, course scheduled")
+            output_log += (
+                "Error: Pinned course produces overlap conflict, course scheduled\n"
+            )
         # Update the conflict table
         for day in course.days:
             conflict_table_update(
@@ -253,16 +257,17 @@ def schedule_courses(course_list):
                 break
 
             if not scheduled:
-                print(f"Error scheduling {course.crn}")
+                output_log += f"Error scheduling {course.crn}\n"
             course_list.remove(course)
         overlap_allowed += 1
 
     # print(conflict_table)
     # print(course_list)
 
-    # output will be
-    for course in course_copy:
-        print(course)
+    # for course in course_copy:
+    #     output_log += str(course)
+
+    return output_log, course_copy
 
 
 def generate_schedule():
