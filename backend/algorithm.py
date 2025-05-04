@@ -3,6 +3,7 @@ from time_conversion import *
 from graph import *
 from Course import *
 from import_csv import *
+import random
 
 
 def group_coreqs(coreq_list):
@@ -200,6 +201,11 @@ def schedule_courses(course_list, seed):
     course_copy = []
     for course in course_list:
         course_copy.append(course)
+
+    # Shuffle list based on seed for randomness
+    random.seed(seed)
+    random.shuffle(course_list)
+
     conflict_table = {"M": {}, "T": {}, "W": {}, "TH": {}, "F": {}}
 
     output_log = ""
