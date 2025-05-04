@@ -138,7 +138,9 @@ def generate_conflict_numbers():
     return list(crn_object_map.values())
 
 
-def is_conflict_overlap(course, s1, days, travel_time=0, conflict_override=0):
+def is_conflict_overlap(
+    course, proposed_start_time, days, travel_time=0, conflict_override=0
+):
     """
     Input: Course object, a start time to check if valid, list of days to check
 
@@ -146,11 +148,11 @@ def is_conflict_overlap(course, s1, days, travel_time=0, conflict_override=0):
     """
     global conflict_table
 
-    e1 = s1 + course.duration
+    proposed_end_time = proposed_start_time + course.duration
     overlap_count = 0
 
     valid_days = set()
-    # 495707
+
     for day in days:
         conflict_day = conflict_table[day]
         # Iterate over every conflict number in the course
@@ -159,12 +161,11 @@ def is_conflict_overlap(course, s1, days, travel_time=0, conflict_override=0):
             if conflict_number not in conflict_day:
                 continue
             # Get each time already reserved for the given conflict number on the given day
-            for s2, e2 in conflict_day[conflict_number]:
+            for time in conflict_day[conflict_number]:
                 # Logic to check for time overlap, add 1 to the conflict count
                 if not (
-                    (s1 - travel_time >= e2)
-                    or (e1 >= s2 + travel_time)
-                    or (s1 >= s2 and e1 <= e2)
+                    proposed_start_time - travel_time >= time[1]
+                    or time[0] >= proposed_end_time + travel_time
                 ):
                     # Only allow conflict overlaps on non-faculty related conflict numbers
                     if conflict_number > 0:
