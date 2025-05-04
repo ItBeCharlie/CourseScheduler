@@ -276,10 +276,14 @@ def schedule_courses(course_list):
 
 def update_db(courses):
     for course in courses:
-        patch = {}
+        # patch = {}
         # UNCOMMENT ME FOR BUG
-        # patch = {"days": course.days}
-        update_course(course, patch)
+        patch = {
+            "days": course.days,
+            "start_time": course.start_time,
+            "end_time": course.end_time,
+        }
+        update_course(course.crn, patch)
 
 
 def generate_schedule():
