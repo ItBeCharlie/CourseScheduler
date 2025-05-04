@@ -37,11 +37,12 @@ const ChangePassword = () => {
       const userId = localStorage.getItem('fid');
       const baseURL = process.env.REACT_APP_API_BASE_URL;
 
-      const response = await axios.post(`${baseURL}/change_password.php`, {
-        userId,
-        oldPassword,
-        newPassword,
+      const response = await axios.post(`${baseURL}/change_password/`, {
+        user_id: userId,
+        old_password: oldPassword,
+        new_password: newPassword,
       });
+      
 
       const data = await response.data;
 

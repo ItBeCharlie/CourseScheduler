@@ -9,7 +9,7 @@ const UploadCSVModal = ({ onClose, onSuccess }) => {
     const formData = new FormData(e.target);
     try {
       const baseURL = process.env.REACT_APP_API_BASE_URL;
-      await axios.post(`${baseURL}/courses/upload_csv.php`, formData);
+      await axios.post(`${baseURL}/upload_csv/`, formData);
       onSuccess(); // Refresh course list
       onClose();   // Close modal
       Swal.fire('Success', 'CSV uploaded successfully!', 'success');

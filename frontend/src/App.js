@@ -9,6 +9,7 @@ import SignupPage from './pages/SignupPage';
 import CalendarPage from './pages/CalendarPage';
 import ProfilePage from './pages/ProfilePage';
 import FacultyPage  from './pages/FacultyPage';
+import RunSchedulerPage  from './pages/RunSchedulerPage';
 import ConfigurationPage  from './pages/ConfigurationPage';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import ProtectedRoute from './components/ProtectedRoute';
@@ -74,6 +75,14 @@ function App() {
             element={
               <ProtectedRoute allowedRoles={['admin']}>
                 <ConfigurationPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/generate"
+            element={
+              <ProtectedRoute allowedRoles={['admin']}>
+                <RunSchedulerPage />
               </ProtectedRoute>
             }
           />

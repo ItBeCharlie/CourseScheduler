@@ -109,12 +109,12 @@ const LoginForm = () => {
       </form>
 
       <hr />
-      <div className="text-center mt-3">
+      {/* <div className="text-center mt-3">
         <GoogleLogin
           onSuccess={handleGoogleLogin}
           onError={() => setMessage('❌ Google Login Failed')}
         />
-      </div>
+      </div> */}
     </>
   );
 };

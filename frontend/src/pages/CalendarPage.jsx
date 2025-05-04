@@ -41,7 +41,7 @@ const getCourseStyle = (code) => {
   };
 };
 
-const timeSlots = Array.from({ length: 48 }, (_, i) => {
+const timeSlots = Array.from({ length: 52 }, (_, i) => {
   const totalMinutes = 480 + i * 15;
   const hour = Math.floor(totalMinutes / 60);
   const minutes = totalMinutes % 60;
@@ -158,6 +158,7 @@ const CalendarPage = () => {
 
                 const startMin = course.start_time;
                 const endMin = course.end_time;
+                if (startMin < 480 || endMin <= startMin) return null;
                 const rowStart = Math.floor((startMin - 480) / 15) + 3;
                 const durationRows = Math.ceil((endMin - startMin) / 15);
 
@@ -187,7 +188,7 @@ const CalendarPage = () => {
                     <div style={{ fontSize: '11px' }}>{course.course_name}</div>
 
                     <div className="d-flex align-items-center mt-1">
-                      <img
+                      {/* <img
                         src={course.faculty_pic || `${process.env.REACT_APP_API_BASE_URL}/profile.png`}
                         alt="faculty"
                         style={{
@@ -197,7 +198,7 @@ const CalendarPage = () => {
                           objectFit: 'cover',
                           marginRight: '5px'
                         }}
-                      />
+                      /> */}
                       <span style={{ fontSize: '11px' }}>{course.faculty_name}</span>
                     </div>
                   </div>

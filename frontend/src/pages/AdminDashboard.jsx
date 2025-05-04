@@ -1,36 +1,49 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import './AdminDashboard.css';
 
 const AdminDashboard = () => {
+
+  const [facultyCount, setFacultyCount] = useState(0);
+  const [courseCount, setCourseCount] = useState(0);
+
+  useEffect(() => {
+    const baseURL = process.env.REACT_APP_API_BASE_URL;
+
+    axios.get(`${baseURL}/admin/total_counts/`)
+      .then((res) => {
+        setFacultyCount(res.data.faculty_count);
+        setCourseCount(res.data.course_count);
+      })
+      .catch((err) => {
+        console.error('Error fetching counts:', err);
+      });
+  }, []);
+
   return (
     <div className="admin-dashboard">
       <header className="admin-header">
         <h1>Admin Dashboard</h1>
-        <p>Manage your system effectively and effortlessly.</p>
+        {/* <p>Manage your system effectively and effortlessly.</p> */}
       </header>
 
       <section className="stats-section">
         <div className="stat-card">
+          <h2>Total Faculty</h2>
+          <p>{facultyCount}</p>
+        </div>
+        <div className="stat-card">
           <h2>Total Courses</h2>
-          <p>128</p>
-        </div>
-        <div className="stat-card">
-          <h2>Registered Users</h2>
-          <p>502</p>
-        </div>
-        <div className="stat-card">
-          <h2>Pending Requests</h2>
-          <p>12</p>
+          <p>{courseCount}</p>
         </div>
       </section>
 
       <section className="nav-section">
         {[
+          { title: 'Manage Faculty', link: '/admin/faculty' },
           { title: 'Manage Courses', link: '/admin/courses' },
-          { title: 'Manage Users', link: '/admin/users' },
-          { title: 'Upload CSV', link: '/admin/upload' },
-          { title: 'Reports & Analytics', link: '/admin/reports' },
-          { title: 'Settings', link: '/admin/settings' },
+          { title: 'Upload CSV', link: '/admin/courses' },
+          { title: 'Calender', link: '/calendar' },
         ].map((item, i) => (
           <a href={item.link} key={i} className="nav-card">
             <h3>{item.title}</h3>
