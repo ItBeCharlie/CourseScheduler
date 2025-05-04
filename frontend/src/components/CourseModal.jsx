@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import '../pages/modal.css';
 import CommentModal from './CommentModal'; 
+import moment from 'moment';
 
 const CourseModal = ({ course, onClose, onPinToggle }) => {
   const [loading, setLoading] = useState(false);
@@ -44,7 +45,9 @@ const CourseModal = ({ course, onClose, onPinToggle }) => {
           <p><strong>CRN:</strong> {course.CRN}</p>
           <p><strong>Faculty:</strong> {course.faculty_name}</p>
           <p><strong>Days:</strong> {course.days}</p>
-          <p><strong>Time:</strong> {course.start_time} – {course.end_time}</p>
+          <p><strong>Time:</strong> {moment().startOf('day').add(course.start_time, 'minutes').format('h:mm A')}–
+            {moment().startOf('day').add(course.end_time, 'minutes').format('h:mm A')}
+          </p>
           <p><strong>Duration:</strong> {course.duration} mins</p>
 
           <div className="d-flex gap-2 mt-3">

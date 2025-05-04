@@ -18,6 +18,9 @@ const CourseTable = ({ courses, onEdit, onDelete, onSort, sortConfig }) => {
     <table className="table table-bordered table-striped align-middle">
       <thead>
         <tr>
+          <th onClick={() => onSort('CRN')} style={headerStyle}>
+            CRN <span>{getSortSymbol('CRN')}</span>
+          </th>
           <th onClick={() => onSort('course_code')} style={headerStyle}>
             Course Code <span>{getSortSymbol('course_code')}</span>
           </th>
@@ -45,6 +48,7 @@ const CourseTable = ({ courses, onEdit, onDelete, onSort, sortConfig }) => {
         ) : (
           courses.map((course) => (
             <tr key={course.CRN}>
+              <td>{course.CRN}</td>
               <td>{course.course_code}</td>
               <td>{course.course_name}</td>
               <td>{course.faculty_name}</td>

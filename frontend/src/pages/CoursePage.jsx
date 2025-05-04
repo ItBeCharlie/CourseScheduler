@@ -11,6 +11,7 @@ const CoursePage = () => {
   const [filteredCourses, setFilteredCourses] = useState([]);
   const [sortConfig, setSortConfig] = useState({ key: '', direction: 'asc' });
   const [filters, setFilters] = useState({
+    CRN: '',
     title: '',
     code: '',
     faculty: '',
@@ -40,6 +41,7 @@ const CoursePage = () => {
   useEffect(() => {
     let filtered = courses.filter((course) => {
       return (
+        course.CRN.toString().includes(filters.CRN) &&
         course.course_name.toLowerCase().includes(filters.title.toLowerCase()) &&
         course.course_code.toLowerCase().includes(filters.code.toLowerCase()) &&
         course.faculty_name.toLowerCase().includes(filters.faculty.toLowerCase()) &&
@@ -121,6 +123,15 @@ const CoursePage = () => {
 
         {/* Filters */}
         <div className="row mb-3">
+          <div className="col">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Filter by CRN"
+              value={filters.CRN}
+              onChange={(e) => setFilters({ ...filters, CRN: e.target.value })}
+            />
+          </div>
           <div className="col">
             <input
               type="text"

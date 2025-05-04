@@ -82,7 +82,7 @@ def _is_admin_or_owner(cur, cid: int, fid: int) -> str:
     row = cur.fetchone()
     if row is None:
         return "not-found"
-    is_owner = row[0] == fid
+    is_owner = int(row[0]) == int(fid)
     cur.execute("SELECT auth_level FROM Faculty WHERE fid=%s;", (fid,))
     is_admin = cur.fetchone()[0] == "admin"
     return "ok" if (is_owner or is_admin) else "not-authorized"
@@ -110,13 +110,15 @@ def delete_comment(cid: int, fid: int):
 # Course CRUD & helpers
 # ------------------------------------------------------------------#
 def create_course(payload: Dict[str, Any]) -> int:
+    # print("[DEBUG] delete request body:", payload)
     with _get_connection().cursor() as cur:
         cur.execute(
             """
-            INSERT INTO Course (course_code,fid,NAME,duration,start_time,end_time,is_pinned)
-            VALUES (%s,%s,%s,%s,%s,%s,%s);
+            INSERT INTO Course (CRN,course_code,fid,NAME,duration,start_time,end_time,is_pinned)
+            VALUES (%s,%s,%s,%s,%s,%s,%s,%s);
             """,
             (
+                payload["crn"],
                 payload["course_code"],
                 payload["faculty_id"],
                 payload["name"],
@@ -126,18 +128,35 @@ def create_course(payload: Dict[str, Any]) -> int:
                 int(payload["is_pinned"]),
             ),
         )
-        crn = cur.lastrowid
+        crn = payload["crn"]
         # Course_Days
         for d in payload["days"]:
             cur.execute("INSERT INTO Course_Days (CRN,days) VALUES (%s,%s);", (crn, d))
         # Prereqs
-        for p in payload.get("prereqs", []):
+        # print("[DEBUG] delete request body:", payload["course_code"])
+        # Resolve prereq CRNs to course codes
+        crn_to_code = {}
+        if payload.get("prereqs"):
+            format_strings = ','.join(['%s'] * len(payload["prereqs"]))
             cur.execute(
-                "INSERT INTO Prereqs (prereq_course_code,course_code) VALUES (%s,%s);",
-                (p, payload["course_code"]),
+                f"SELECT CRN, course_code FROM Course WHERE CRN IN ({format_strings})",
+                payload["prereqs"]
             )
+            crn_to_code = {row[0]: row[1] for row in cur.fetchall()}
+
+        # Insert Prereqs using course codes
+        for p in payload.get("prereqs", []):
+            prereq_code = crn_to_code.get(p)
+            if prereq_code:
+                cur.execute(
+                    "INSERT INTO Prereqs (prereq_course_code, course_code) VALUES (%s, %s);",
+                    (prereq_code, payload["course_code"]),
+                )
+
         # Coreqs
+        
         for c in payload.get("coreqs", []):
+            print("[DEBUG] Trying to insert coreq:", crn, c)
             cur.execute("INSERT INTO Coreqs (CRN1,CRN2) VALUES (%s,%s);", (crn, c))
     return crn
 
@@ -170,9 +189,11 @@ def get_course_relations(crn: int):
         out["coreqs"] = [x[0] for x in cur.fetchall()]
         cur.execute(
             """
-            SELECT prereq_course_code
-            FROM Prereqs
-            WHERE course_code = (SELECT course_code FROM Course WHERE CRN=%s);
+            SELECT prereq.CRN
+            FROM Course c
+            JOIN Prereqs p ON c.course_code = p.course_code
+            JOIN Course prereq ON prereq.course_code = p.prereq_course_code
+            WHERE c.CRN = %s;
             """,
             (crn,),
         )
@@ -193,7 +214,7 @@ def get_prereq_table():
 
 
 def update_course(crn: int, patch: Dict[str, Any]):
-    print(f"[DEBUG] Updating course {crn} with patch: {patch}")
+    # print(f"[DEBUG] Updating course {crn} with patch: {patch}")
     fields, params = [], []
     mapping = {"name": "NAME", "faculty_id": "fid"}
     for k, v in patch.items():
@@ -219,7 +240,8 @@ def update_course(crn: int, patch: Dict[str, Any]):
 
         if "days" in patch:
             cur.execute("DELETE FROM Course_Days WHERE CRN=%s;", (crn,))
-            days_str = ",".join(patch["days"])
+            days_str = ",".join(patch.get("days", []))
+            days_str = days_str.lstrip(",")  # ✅ removes any leading comma
             cur.execute(
                 "INSERT INTO Course_Days (CRN,days) VALUES (%s,%s);", (crn, days_str)
             )
@@ -232,11 +254,15 @@ def update_course(crn: int, patch: Dict[str, Any]):
             )
             code = patch.get("course_code") or cur.fetchone()[0]
             cur.execute("DELETE FROM Prereqs WHERE course_code=%s;", (code,))
-            for p in patch["prereqs"]:
-                cur.execute(
-                    "INSERT INTO Prereqs (prereq_course_code,course_code) VALUES (%s,%s);",
-                    (p, code),
-                )
+            for crn_value in patch["prereqs"]:
+                cur.execute("SELECT course_code FROM Course WHERE CRN=%s;", (crn_value,))
+                prereq_code_row = cur.fetchone()
+                if prereq_code_row:  # only insert if valid
+                    prereq_code = prereq_code_row[0]
+                    cur.execute(
+                        "INSERT INTO Prereqs (prereq_course_code, course_code) VALUES (%s, %s);",
+                        (prereq_code, code),
+                    )
 
         # Coreqs
         if "coreqs" in patch:

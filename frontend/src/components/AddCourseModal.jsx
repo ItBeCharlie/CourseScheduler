@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 
 const AddCourseModal = ({ onClose, onCourseAdded, editData = null }) => {
   const [formData, setFormData] = useState({
+    crn: '', 
     course_code: '',
     name: '',
     faculty_id: null,
@@ -58,6 +59,7 @@ const AddCourseModal = ({ onClose, onCourseAdded, editData = null }) => {
     if (editData) {
       setFormData(prev => ({
         ...prev,
+        crn: editData.CRN || '',
         course_code: editData.course_code,
         name: editData.course_name,
         faculty_id: editData.faculty_id || '',
@@ -92,6 +94,16 @@ const AddCourseModal = ({ onClose, onCourseAdded, editData = null }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    e.preventDefault();
+
+    // 🧪 Validate CRN
+    if (!editData) {
+      const crnValue = formData.crn;
+      if (!crnValue || isNaN(crnValue) || !Number.isInteger(Number(crnValue))) {
+        Swal.fire('Invalid CRN', 'CRN must be an integer.', 'error');
+        return;
+      }
+    }
     try {
       if (editData) {
         await axios.post(`${baseURL}/course/${editData.CRN}/update/`, {
@@ -129,6 +141,15 @@ const AddCourseModal = ({ onClose, onCourseAdded, editData = null }) => {
       <div className="modal-dialog">
         <form onSubmit={handleSubmit} className="modal-content p-4">
           <h4>{editData ? 'Edit Course' : 'Add New Course'}</h4>
+
+          <label className="form-label">CRN</label>
+            <input type="text" className="form-control mb-2"
+              value={formData.crn}
+              onChange={(e) => setFormData({ ...formData, crn: e.target.value })}
+              required={!editData}  // only required if adding
+              disabled={!!editData} // disable if editing
+            />
+
 
           <label className="form-label">Course Code</label>
           <input type="text" className="form-control mb-2"
