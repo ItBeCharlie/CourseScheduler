@@ -151,6 +151,8 @@ def is_conflict_overlap(
     proposed_end_time = proposed_start_time + course.duration
     overlap_count = 0
 
+    valid_days = set()
+
     for day in days:
         conflict_day = conflict_table[day]
         # Iterate over every conflict number in the course
@@ -170,7 +172,9 @@ def is_conflict_overlap(
                         overlap_count += 1
                     # If the number of overlaps is greater than the maximum allowed, return True for conflict
                     if overlap_count > conflict_override:
-                        return True
+                        valid_days.add(day)
+                        if valid_days == set(days):
+                            return True
     # At this point, all potential conflicts have been checked and there wasn't an overlap
     return False
 
