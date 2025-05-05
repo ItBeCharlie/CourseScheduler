@@ -111,7 +111,7 @@ def upsert_courses(course_objs: List[Course]):
     # ensure Faculty rows exist (by name)
     for c in course_objs:
         cur.execute(
-            "INSERT IGNORE INTO Faculty (NAME, auth_level, email) VALUES (%s,'user',%s);",
+            "INSERT IGNORE INTO Faculty (NAME, auth_level, email) VALUES (%s,'faculty',%s);",
             (c.faculty_name, f"{c.faculty_name.replace(' ','').lower()}@example.com"),
         )
     cur.execute("SELECT fid, NAME FROM Faculty;")
