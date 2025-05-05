@@ -37,7 +37,7 @@ const Navbar = ({ onLogout }) => {
                  Configuration
               </a>
               <a href="/generate/" className="btn btn-outline-light btn-sm">
-                Generate Algorithm
+                Generate Schedule
               </a>
 
             </>
